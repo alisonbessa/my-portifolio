@@ -17,6 +17,7 @@ A modern portfolio website built with Next.js, TypeScript, and TailwindCSS. This
 
 - Modern, responsive design
 - Easy to customize and extend
+- Global dark/light theme toggle with persistence
 - Code quality enforced with ESLint, Prettier, Husky, and lint-staged
 
 ## Installation
