@@ -6,7 +6,10 @@
 
 ## Customizing Components
 
-<!-- How to customize or create new components will be documented as the project evolves. -->
+- The global dark/light theme toggle is implemented in `src/app/components/ThemeToggle.tsx`.
+- It uses Tailwind's dark class strategy and persists the user's preference in localStorage.
+- The toggle is accessible from the header (see `src/app/layout.tsx`).
+- To customize the toggle, edit the `ThemeToggle` component or its placement in the layout.
 
 ## Extending Features
 
