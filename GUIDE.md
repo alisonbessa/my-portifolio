@@ -23,6 +23,11 @@ All dynamic content is managed in the `/data` folder. Each file is typed and mod
 
 Each file also exports a section title and subtitle for use in the UI.
 
+### Navigation
+
+- The `Header` component provides anchor links to each main section of the page (Skills, Projects, Professional Journey, Personal Journey, Contact).
+- Navigation uses smooth scroll behavior for a better user experience. To add or remove sections, update the `sections` array in `Header.tsx` and ensure the corresponding section has a matching `id` in `page.tsx`.
+
 ### Best Practices
 
 - Keep all content in English.
