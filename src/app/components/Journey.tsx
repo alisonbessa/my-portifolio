@@ -1,4 +1,5 @@
 import type { JourneyEntry } from '../../../data/journey';
+import Link from 'next/link';
 
 type JourneyProps = {
   title: string;
@@ -16,7 +17,9 @@ export function Journey({ title, subtitle, journey }: JourneyProps) {
           <li key={entry.slug}>
             <article>
               <h3>
-                {entry.title} @ {entry.company}
+                <Link href={`/journey/${entry.slug}`}>
+                  {entry.title} @ {entry.company}
+                </Link>
               </h3>
               <p>{entry.period}</p>
               <p>{entry.description}</p>
