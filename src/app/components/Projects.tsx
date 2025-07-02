@@ -21,27 +21,21 @@ export function Projects({ title, subtitle, projects }: ProjectsProps) {
           return (
             <li key={project.slug}>
               <article>
-                <h3>{project.title}</h3>
+                <h3>
+                  <Link href={`/projects/${project.slug}`}>{project.title}</Link>
+                </h3>
                 <p>{project.description}</p>
                 {project.demoUrl && (
                   <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                     Demo
                   </a>
                 )}
-                {' | '}
                 {project.repoUrl && !project.repoPrivate && (
                   <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
                     Repository
                   </a>
                 )}
                 {project.repoPrivate && <span>Private Repository</span>}
-                {' | '}
-                <Link href={`/projects/${project.slug}`}>More details</Link>
-                {project.details && (
-                  <p>
-                    <em>{project.details}</em>
-                  </p>
-                )}
                 {techTags.length > 0 && (
                   <div className="flex flex-wrap mt-2">
                     <span className="mr-2 font-semibold text-sm">Tech Stack:</span>

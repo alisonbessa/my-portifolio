@@ -1,4 +1,6 @@
 import type { PersonalEntry } from '../../../data/personalJourney';
+import Link from 'next/link';
+import Image from 'next/image';
 
 type PersonalJourneyProps = {
   title: string;
@@ -15,9 +17,19 @@ export function PersonalJourney({ title, subtitle, personalJourney }: PersonalJo
         {personalJourney.map((entry) => (
           <li key={entry.slug}>
             <article>
-              <h3>{entry.title}</h3>
+              <h3>
+                <Link href={`/journey/${entry.slug}`}>{entry.title}</Link>
+              </h3>
               <p>{entry.date}</p>
-              {entry.image && <img src={entry.image} alt={entry.title} style={{ maxWidth: 200 }} />}
+              {entry.image && (
+                <Image
+                  src={entry.image}
+                  alt={entry.title}
+                  width={200}
+                  height={120}
+                  style={{ maxWidth: 200 }}
+                />
+              )}
               <p>{entry.description}</p>
               <ul>
                 {entry.reflections.map((r, i) => (
