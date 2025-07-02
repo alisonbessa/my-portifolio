@@ -14,6 +14,10 @@ export type Project = {
   tags?: string[];
   date: string;
   thumbnail?: string;
+  motivation?: string;
+  challenges?: string[];
+  learnings?: string[];
+  details?: string;
 };
 
 export const projects: Project[] = [
@@ -29,6 +33,17 @@ export const projects: Project[] = [
     tags: ['Productivity', 'Collaboration', 'App'],
     date: '2024-05-10',
     thumbnail: '/images/projects/taskmaster-thumb.png',
+    motivation: 'To help teams and individuals organize their work and boost productivity.',
+    challenges: [
+      'Designing a real-time collaborative editing experience',
+      'Ensuring data consistency across devices',
+    ],
+    learnings: [
+      'Deepened knowledge of WebSockets and real-time data flows',
+      'Improved UI/UX for productivity tools',
+    ],
+    details:
+      'TaskMaster Pro allows users to create, assign, and track tasks in real time, with advanced filtering and analytics.',
   },
   {
     slug: 'weatherly',
@@ -39,5 +54,14 @@ export const projects: Project[] = [
     featured: false,
     tags: ['Weather', 'Dashboard'],
     date: '2023-09-15',
+    thumbnail: '/images/projects/weatherly-thumb.png',
+    motivation: 'To make weather data more accessible and actionable for everyday users.',
+    challenges: [
+      'Integrating multiple third-party weather APIs',
+      'Handling inconsistent data formats',
+    ],
+    learnings: ['API normalization strategies', 'Building robust error handling for external data'],
+    details:
+      'Weatherly aggregates weather data from several sources, providing users with accurate forecasts and climate trends.',
   },
 ];

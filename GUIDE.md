@@ -1,12 +1,12 @@
 # Developer & User Guide
 
-## Editing Content in `/data`
+## Modular Data Layer
 
 All dynamic content is managed in the `/data` folder. Each file is typed and modular, making it easy to update or extend content for the portfolio.
 
 ### Files
 
-- `projects.ts`: Project data and types
+- `projects.ts`: Project data and types (now includes motivation, challenges, learnings, details)
 - `journey.ts`: Professional journey data and types
 - `skills.ts`: Skills data and types
 - `socials.ts`: Social/contact data and types
@@ -15,7 +15,7 @@ All dynamic content is managed in the `/data` folder. Each file is typed and mod
 
 ### How to Add or Edit Content
 
-- To add a new project, edit `projects.ts` and add a new object to the `projects` array.
+- To add a new project, edit `projects.ts` and add a new object to the `projects` array. You can now include fields like `motivation`, `challenges`, `learnings`, and `details` for richer project pages.
 - To add a new professional experience, edit `journey.ts` and add a new object to the `journey` array.
 - To add a new skill, edit `skills.ts` and add a new object to the `skills` array.
 - To add a new social link, edit `socials.ts` and add a new object to the `socials` array.
@@ -27,6 +27,12 @@ Each file also exports a section title and subtitle for use in the UI.
 
 - The `Header` component provides anchor links to each main section of the page (Skills, Projects, Professional Journey, Personal Journey, Contact).
 - Navigation uses smooth scroll behavior for a better user experience. To add or remove sections, update the `sections` array in `Header.tsx` and ensure the corresponding section has a matching `id` in `page.tsx`.
+
+### Project Details Pages
+
+- Each project has a dynamic page at `/projects/[slug]` that displays all available details, including the new fields.
+- If `repoPrivate` is true, the repository link is replaced with a "Private Repository" label.
+- To link to a project details page, use `<Link href={/projects/${project.slug}}>`.
 
 ### Best Practices
 

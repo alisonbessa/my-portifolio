@@ -1,4 +1,5 @@
 import type { Project } from '../../../data/projects';
+import Link from 'next/link';
 
 type ProjectsProps = {
   title: string;
@@ -19,9 +20,12 @@ export function Projects({ title, subtitle, projects }: ProjectsProps) {
               <p>{project.description}</p>
               <p>Stack: {project.stack.join(', ')}</p>
               {project.demoUrl && (
-                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                  Demo
-                </a>
+                <>
+                  <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                    Demo
+                  </a>
+                  {' | '}
+                </>
               )}
               {project.repoUrl && !project.repoPrivate && (
                 <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
@@ -29,6 +33,13 @@ export function Projects({ title, subtitle, projects }: ProjectsProps) {
                 </a>
               )}
               {project.repoPrivate && <span>Private Repository</span>}
+              {' | '}
+              <Link href={`/projects/${project.slug}`}>More details</Link>
+              {project.details && (
+                <p>
+                  <em>{project.details}</em>
+                </p>
+              )}
               {project.tags && <p>Tags: {project.tags.join(', ')}</p>}
               <p>Date: {project.date}</p>
             </article>
