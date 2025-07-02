@@ -135,26 +135,7 @@ function ThemeToggleWrapper() {
         'bg-transparent border-none shadow-none',
       )}
     >
-      <ThemeToggleSimple />
-    </div>
-  );
-}
-
-function ThemeToggleSimple() {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <button
-      aria-label="Alternar tema"
-      className={cn(
-        'cursor-pointer p-0 m-0 bg-transparent border-none shadow-none outline-none flex items-center justify-center',
-        hovered ? 'text-primary' : 'text-foreground/80',
-        'transition-colors focus-visible:ring-2 focus-visible:ring-primary/60',
-      )}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      tabIndex={0}
-    >
       <ThemeToggle />
-    </button>
+    </div>
   );
 }
