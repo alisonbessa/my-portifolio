@@ -2,7 +2,37 @@
 
 ## Editing Content in `/data`
 
-<!-- Instructions for editing content in the /data directory will be added as features are implemented. -->
+All dynamic content is managed in the `/data` folder. Each file is typed and modular, making it easy to update or extend content for the portfolio.
+
+### Files
+
+- `projects.ts`: Project data and types
+- `journey.ts`: Professional journey data and types
+- `skills.ts`: Skills data and types
+- `socials.ts`: Social/contact data and types
+- `personalJourney.ts`: Personal (non-professional) experiences and types
+- `home.ts`: Home page metadata
+
+### How to Add or Edit Content
+
+- To add a new project, edit `projects.ts` and add a new object to the `projects` array.
+- To add a new professional experience, edit `journey.ts` and add a new object to the `journey` array.
+- To add a new skill, edit `skills.ts` and add a new object to the `skills` array.
+- To add a new social link, edit `socials.ts` and add a new object to the `socials` array.
+- To add a new personal experience, edit `personalJourney.ts` and add a new object to the `personalJourney` array.
+
+Each file also exports a section title and subtitle for use in the UI.
+
+### Best Practices
+
+- Keep all content in English.
+- Use realistic but generic placeholders for demo data.
+- Update types if you need to extend the data structure.
+- Use the exported titles/subtitles for consistent UI sections.
+
+---
+
+For more information, see the README.md file.
 
 ## Customizing Components
 

@@ -68,3 +68,11 @@ When you try to commit, Husky will run:
 - Type checking with `tsc --noEmit`
 
 If any of these steps fail, the commit will be blocked until the code is compliant.
+
+## Customization
+
+All content is managed in the `/data` folder. For technical details and how to extend the data structure, see [GUIDE.md](./GUIDE.md).
+
+---
+
+Feel free to fork, customize, and make it your own!
