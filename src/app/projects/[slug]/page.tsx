@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { projects } from '../../../../data/projects';
+import { projects, T } from '../../../../data/projects';
 import Image from 'next/image';
+import { TagBadge } from '../../components/TagBadge';
 
 type ProjectPageProps = {
   params: { slug: string };
@@ -10,6 +11,9 @@ type ProjectPageProps = {
 export default function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.slug === params.slug);
   if (!project) return notFound();
+
+  const techTags = (project.tags || []).filter((tag) => T[tag]?.type === 'tech');
+  const softTags = (project.tags || []).filter((tag) => T[tag]?.type === 'soft');
 
   return (
     <main style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
@@ -28,16 +32,21 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         />
       )}
       <section>
-        <h2>Stack</h2>
-        <ul>
-          {project.stack.map((tech) => (
-            <li key={tech}>{tech}</li>
-          ))}
-        </ul>
-        {project.tags && (
-          <p>
-            <strong>Tags:</strong> {project.tags.join(', ')}
-          </p>
+        {techTags.length > 0 && (
+          <div className="flex flex-wrap mt-2 mb-2">
+            <span className="mr-2 font-semibold text-sm">Tech Stack:</span>
+            {techTags.map((tag) => (
+              <TagBadge key={tag} tag={tag} />
+            ))}
+          </div>
+        )}
+        {softTags.length > 0 && (
+          <div className="flex flex-wrap mt-2 mb-2">
+            <span className="mr-2 font-semibold text-sm">Soft Skills:</span>
+            {softTags.map((tag) => (
+              <TagBadge key={tag} tag={tag} />
+            ))}
+          </div>
         )}
         <p>
           <strong>Date:</strong> {project.date}
