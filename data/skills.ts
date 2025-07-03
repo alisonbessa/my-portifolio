@@ -11,6 +11,7 @@ export const skills: Skill[] = [
   // Frontend
   { name: 'React', level: 'advanced', category: 'Frontend' },
   { name: 'Next.js', level: 'advanced', category: 'Frontend' },
+  { name: 'Remix', level: 'intermediate', category: 'Frontend' },
   { name: 'TypeScript', level: 'advanced', category: 'Frontend' },
   { name: 'JavaScript', level: 'advanced', category: 'Frontend' },
   { name: 'RESTful APIs', level: 'advanced', category: 'Frontend' },
@@ -29,7 +30,7 @@ export const skills: Skill[] = [
   { name: 'Design Tokens', level: 'advanced', category: 'Architecture' },
   { name: 'ESLint', level: 'advanced', category: 'Architecture' },
   { name: 'Prettier', level: 'advanced', category: 'Architecture' },
-  { name: 'Husky', level: 'advanced', category: 'Architecture' },
+  { name: 'Husky', level: 'intermediate', category: 'Architecture' },
   { name: 'Storybook', level: 'intermediate', category: 'Architecture' },
 
   // Testing
