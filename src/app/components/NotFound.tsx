@@ -12,12 +12,12 @@ export function NotFound({
   message?: string;
 }) {
   return (
-    <main style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
+    <div style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
       <nav style={{ marginBottom: 24 }}>
         <Link href={backHref}>{backLabel}</Link>
       </nav>
       <h1>{title}</h1>
       <p>{message}</p>
-    </main>
+    </div>
   );
 }

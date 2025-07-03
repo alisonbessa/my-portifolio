@@ -16,7 +16,7 @@ export default async function CareerDetailPage({ params }: { params: { slug: str
   }
 
   return (
-    <main style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
+    <div style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
       <nav style={{ marginBottom: 24 }}>
         <Link href="/career">← Back to Career</Link>
       </nav>
@@ -35,6 +35,6 @@ export default async function CareerDetailPage({ params }: { params: { slug: str
           ))}
         </ul>
       </section>
-    </main>
+    </div>
   );
 }

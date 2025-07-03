@@ -17,7 +17,7 @@ export default async function AboutMeDetailPage({ params }: { params: { slug: st
   }
 
   return (
-    <main style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
+    <div style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
       <nav style={{ marginBottom: 24 }}>
         <Link href="/about-me">← Back to About Me</Link>
       </nav>
@@ -46,6 +46,6 @@ export default async function AboutMeDetailPage({ params }: { params: { slug: st
       <p>
         <strong>Tags:</strong> {entry.tags.join(', ')}
       </p>
-    </main>
+    </div>
   );
 }

@@ -16,7 +16,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const softTags = (project.tags || []).filter((tag) => T[tag]?.type === 'soft');
 
   return (
-    <main style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
+    <div style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
       <nav style={{ marginBottom: 24 }}>
         <Link href="/projects">← Back to Projects</Link>
       </nav>
@@ -104,6 +104,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <span style={{ color: 'red', marginLeft: 8 }}>Private Repository</span>
         )}
       </section>
-    </main>
+    </div>
   );
 }

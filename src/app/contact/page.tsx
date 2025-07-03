@@ -2,7 +2,7 @@ import { socials } from '../../../data/socials';
 
 export default function ContactPage() {
   return (
-    <main className="pt-20 max-w-xl mx-auto px-4">
+    <>
       <h1 className="text-3xl font-bold mb-4">Contact</h1>
       <ul className="space-y-2">
         {socials.map((s) => (
@@ -18,6 +18,6 @@ export default function ContactPage() {
           </li>
         ))}
       </ul>
-    </main>
+    </>
   );
 }
