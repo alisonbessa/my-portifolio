@@ -32,14 +32,13 @@ export function Header() {
       <motion.nav
         layout
         className={cn(
-          'flex items-center gap-1 px-3 py-1 rounded-full border border-border bg-white/20 backdrop-blur-sm shadow-sm pointer-events-auto',
+          'flex items-center md:gap-1 px-3 py-1 rounded-full border border-border bg-white/20 backdrop-blur-sm shadow-sm pointer-events-auto',
           'max-w-fit',
         )}
         role="navigation"
       >
         {sections.map((section) => {
           const Icon = section.icon;
-          // Ativo se pathname === href, exceto para home ("/"), que só é ativo se pathname === "/"
           const isActive =
             section.href === '/' ? pathname === '/' : pathname.startsWith(section.href);
           return (
@@ -50,7 +49,7 @@ export function Header() {
               aria-current={isActive ? 'page' : undefined}
               tabIndex={0}
               className={cn(
-                'relative flex items-center gap-2 px-4 py-2 font-medium outline-none transition-colors focus-visible:ring-2 focus-visible:ring-primary/60',
+                'relative flex items-center gap-2 px-3 md:px-4 py-2 font-medium outline-none transition-colors focus-visible:ring-2 focus-visible:ring-primary/60',
                 isMobile ? 'justify-center' : '',
                 isActive
                   ? 'bg-white/40 border border-border shadow-sm dark:shadow-[0_2px_8px_0_rgba(255,255,255,0.1)] dark:bg-black/70 text-primary'

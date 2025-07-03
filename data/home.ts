@@ -1,8 +1,7 @@
-export const homeTitle = 'Welcome to the Portfolio';
-export const homeSubtitle =
-  'Explore projects, experiences, and lessons in a dynamic and organized way.';
+export const homeTitle = 'Alison Bessa';
+export const homeSubtitle = 'Crafting solutions, not just code';
 export const homeDescription =
-  'This portfolio provides a complete overview of projects, skills, professional and personal journeys, as well as ways to get in touch.';
+  'From robotics and business ownership to engineering interfaces used at scale, I’ve always enjoyed solving real problems with practical tools and a human-first mindset.';
 export const homeKeywords = [
   'portfolio',
   'projects',
@@ -11,3 +10,5 @@ export const homeKeywords = [
   'personal experiences',
   'contact',
 ];
+export const resumeLink =
+  'https://drive.google.com/file/d/1D6g8AWcvvTbNXrU-ak3A6xmxzpacGyCG/view?usp=drive_link';

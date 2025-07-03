@@ -1,4 +1,4 @@
-export const userName = 'John Doe';
+export const userName = 'Alison Bessa';
 export const socialsTitle = 'Social & Contact';
 export const socialsSubtitle = 'Where you can find or contact me.';
 
@@ -11,22 +11,22 @@ export type Social = {
 export const socials: Social[] = [
   {
     platform: 'GitHub',
-    url: 'https://github.com/johndoe',
+    url: 'https://github.com/alisonbessa',
     icon: 'github',
   },
   {
     platform: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/johndoe/',
+    url: 'https://www.linkedin.com/in/alisonbessa/',
     icon: 'linkedin',
   },
   {
     platform: 'Instagram',
-    url: 'https://instagram.com/johndoe',
+    url: 'https://instagram.com/alisonbessa',
     icon: 'instagram',
   },
   {
     platform: 'Email',
-    url: 'mailto:johndoe@email.com',
+    url: 'mailto:alisonbessa@gmail.com',
     icon: 'mail',
   },
 ];
