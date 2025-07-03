@@ -6,7 +6,15 @@ export type Social = {
   platform: string;
   url: string;
   icon?: string;
+  extra?: string;
 };
+
+export const location = 'São Paulo, Brazil (GMT-3)';
+// Example
+// export const availability = 'Open to new opportunities and freelance projects';
+export const availability = null;
+export const contactMessage =
+  "Let's connect! Feel free to reach out for collaborations, networking, or just to say hi.";
 
 export const socials: Social[] = [
   {
@@ -28,5 +36,6 @@ export const socials: Social[] = [
     platform: 'Email',
     url: 'mailto:alisonbessa@gmail.com',
     icon: 'mail',
+    extra: 'Preferred for professional contact',
   },
 ];
