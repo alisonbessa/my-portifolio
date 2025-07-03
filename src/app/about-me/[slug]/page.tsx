@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { NotFound } from '../../components/NotFound';
 
-export default function AboutMeDetailPage({ params }: { params: { slug: string } }) {
+export default async function AboutMeDetailPage({ params }: { params: { slug: string } }) {
   const entry = (aboutMe as AboutMeEntry[]).find((p) => p.slug === params.slug);
 
   if (!entry) {

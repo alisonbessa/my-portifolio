@@ -2,7 +2,7 @@ import { career, CareerEntry } from '../../../../data/career';
 import Link from 'next/link';
 import { NotFound } from '../../components/NotFound';
 
-export default function CareerDetailPage({ params }: { params: { slug: string } }) {
+export default async function CareerDetailPage({ params }: { params: { slug: string } }) {
   const entry = (career as CareerEntry[]).find((j) => j.slug === params.slug);
 
   if (!entry) {

@@ -8,7 +8,7 @@ type ProjectPageProps = {
   params: { slug: string };
 };
 
-export default function ProjectPage({ params }: ProjectPageProps) {
+export default async function ProjectPage({ params }: ProjectPageProps) {
   const project = projects.find((p) => p.slug === params.slug);
   if (!project) return notFound();
 
