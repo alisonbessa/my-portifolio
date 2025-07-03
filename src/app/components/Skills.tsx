@@ -10,6 +10,10 @@ const categoryEmojis: Record<string, string> = {
   DevOps: '⚙️',
   Mobile: '📱',
   Cloud: '☁️',
+  Architecture: '🏗️',
+  'Auth & Security': '🔒',
+  'Product & Analytics': '📊',
+  Collaboration: '🤝',
   Other: '✨',
 };
 

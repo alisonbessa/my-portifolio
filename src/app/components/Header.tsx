@@ -10,8 +10,8 @@ import Link from 'next/link';
 const sections = [
   { id: 'home', label: 'Home', icon: HomeIcon, href: '/' },
   { id: 'skills', label: 'Skills', icon: Code2, href: '/skills' },
-  { id: 'projects', label: 'Projects', icon: Briefcase, href: '/projects' },
   { id: 'career', label: 'Career', icon: User, href: '/career' },
+  { id: 'projects', label: 'Projects', icon: Briefcase, href: '/projects' },
   { id: 'about-me', label: 'About Me', icon: Mail, href: '/about-me' },
   { id: 'contact', label: 'Contact', icon: Mail, href: '/contact' },
 ];
