@@ -157,7 +157,7 @@
   * {
     @apply border-border outline-ring/50;
     transition-property: color, background-color, border-color, box-shadow;
-    transition-duration: 1s;
+    transition-duration: 0.3s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -173,10 +173,10 @@
     font-variation-settings: normal;
     tab-size: 4;
     transition:
-      background 1s cubic-bezier(0.4, 0, 0.2, 1),
-      color 1s cubic-bezier(0.4, 0, 0.2, 1),
-      border-color 1s cubic-bezier(0.4, 0, 0.2, 1),
-      box-shadow 1s cubic-bezier(0.4, 0, 0.2, 1);
+      background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   body {
@@ -188,10 +188,10 @@
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     transition:
-      background 1s cubic-bezier(0.4, 0, 0.2, 1),
-      color 1s cubic-bezier(0.4, 0, 0.2, 1),
-      border-color 1s cubic-bezier(0.4, 0, 0.2, 1),
-      box-shadow 1s cubic-bezier(0.4, 0, 0.2, 1);
+      background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Typography */

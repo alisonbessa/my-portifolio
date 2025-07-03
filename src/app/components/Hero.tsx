@@ -1,5 +1,4 @@
 'use client';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -23,47 +22,27 @@ export function Hero({ title, subtitle, description, resumeLink }: HeroProps) {
               alt="Profile picture"
               width={180}
               height={270}
-              className="rounded-full shadow-lg object-cover w-28 h-28 sm:w-40 sm:h-40 md:w-44 md:h-60"
+              className="rounded-full shadow-lg object-cover w-28 h-28 sm:w-40 sm:h-40 md:w-44 md:h-60 transition-all duration-700 ease-out"
               onError={() => setImgExists(false)}
               priority
             />
           </div>
         )}
         <div className="flex flex-col items-center md:items-start w-full max-w-2xl gap-2 sm:gap-4">
-          <motion.h1
-            className="text-4xl sm:text-6xl font-bold tracking-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
-          >
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight transition-all duration-700 ease-out">
             {title}
-          </motion.h1>
-          <motion.p
-            className="text-xl sm:text-2xl text-muted-foreground max-w-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-          >
+          </h1>
+          <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl transition-all duration-700 ease-out">
             {subtitle}
-          </motion.p>
-          <motion.p
-            className="text-base sm:text-lg text-muted-foreground max-w-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
-          >
+          </p>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl transition-all duration-700 ease-out">
             {description}
-          </motion.p>
+          </p>
         </div>
       </div>
 
       {resumeLink ? (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.8, ease: 'easeOut' }}
-          className="w-full flex justify-center mt-6"
-        >
+        <div className="w-full flex justify-center mt-6 transition-all duration-700 ease-out">
           <span className="text-base sm:text-lg text-muted-foreground">
             Browse my projects, experience, and story using the menu or{' '}
             <a
@@ -76,7 +55,7 @@ export function Hero({ title, subtitle, description, resumeLink }: HeroProps) {
             </a>
             .
           </span>
-        </motion.div>
+        </div>
       ) : null}
     </section>
   );

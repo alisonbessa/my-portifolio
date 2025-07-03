@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
-import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from './ThemeToggle';
 import { Home as HomeIcon, Code2, Briefcase, User, Mail } from 'lucide-react';
@@ -29,8 +28,7 @@ export function Header() {
       )}
       aria-label="Main navigation"
     >
-      <motion.nav
-        layout
+      <nav
         className={cn(
           'flex items-center md:gap-1 px-3 py-1 rounded-full border border-border bg-white/20 backdrop-blur-sm shadow-sm pointer-events-auto',
           'max-w-fit',
@@ -56,18 +54,18 @@ export function Header() {
                   : 'bg-transparent border-none shadow-none text-foreground/80 hover:text-primary',
                 'rounded-full cursor-pointer select-none',
                 !isActive && 'hover:bg-transparent',
+                'transition-all duration-300 ease-out',
               )}
             >
-              <span className="md:hidden">
+              <span className="md:hidden transition-all duration-300 ease-out">
                 <Icon size={20} strokeWidth={2.2} />
               </span>
-              <span className="hidden md:inline">{section.label}</span>
+              <span className="hidden md:inline transition-all duration-300 ease-out">
+                {section.label}
+              </span>
               {isActive && (
-                <motion.div
-                  layoutId="header-active"
-                  className="absolute left-0 top-0 h-full w-full bg-white/40 border border-border rounded-full shadow-sm dark:shadow-[0_2px_8px_0_rgba(255,255,255,0.08)] -z-10"
-                  initial={false}
-                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                <span
+                  className="absolute left-0 top-0 h-full w-full bg-white/40 border border-border rounded-full shadow-sm dark:shadow-[0_2px_8px_0_rgba(255,255,255,0.08)] -z-10 transition-all duration-300 ease-out"
                   style={{ top: 0, bottom: 0 }}
                 />
               )}
@@ -75,7 +73,7 @@ export function Header() {
           );
         })}
         <ThemeToggleWrapper />
-      </motion.nav>
+      </nav>
     </header>
   );
 }
