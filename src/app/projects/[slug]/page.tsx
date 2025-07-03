@@ -18,7 +18,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   return (
     <main style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
       <nav style={{ marginBottom: 24 }}>
-        <Link href="/">← Back to Home</Link>
+        <Link href="/projects">← Back to Projects</Link>
       </nav>
       <h1>{project.title}</h1>
       <p>{project.description}</p>

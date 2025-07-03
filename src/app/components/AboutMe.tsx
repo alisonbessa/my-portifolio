@@ -1,24 +1,24 @@
-import type { PersonalEntry } from '../../../data/personalJourney';
+import type { AboutMeEntry } from '../../../data/aboutMe';
 import Link from 'next/link';
 import Image from 'next/image';
 
-type PersonalJourneyProps = {
+type AboutMeProps = {
   title: string;
   subtitle: string;
-  personalJourney: PersonalEntry[];
+  aboutMe: AboutMeEntry[];
 };
 
-export function PersonalJourney({ title, subtitle, personalJourney }: PersonalJourneyProps) {
+export function AboutMe({ title, subtitle, aboutMe }: AboutMeProps) {
   return (
     <section>
       <h2>{title}</h2>
       <p>{subtitle}</p>
       <ul>
-        {personalJourney.map((entry) => (
+        {aboutMe.map((entry) => (
           <li key={entry.slug}>
             <article>
               <h3>
-                <Link href={`/journey/${entry.slug}`}>{entry.title}</Link>
+                <Link href={`/about-me/${entry.slug}`}>{entry.title}</Link>
               </h3>
               <p>{entry.date}</p>
               {entry.image && (

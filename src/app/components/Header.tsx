@@ -1,69 +1,25 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
+import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ThemeToggle } from './ThemeToggle';
-import { Home, Code2, Briefcase, User, Mail } from 'lucide-react';
+import { Home as HomeIcon, Code2, Briefcase, User, Mail } from 'lucide-react';
+import Link from 'next/link';
 
 const sections = [
-  { id: 'skills', label: 'Skills', icon: Code2 },
-  { id: 'projects', label: 'Projects', icon: Briefcase },
-  { id: 'journey', label: 'Professional Journey', icon: User },
-  { id: 'personal-journey', label: 'Personal Journey', icon: Home },
-  { id: 'contact', label: 'Contact', icon: Mail },
+  { id: 'home', label: 'Home', icon: HomeIcon, href: '/' },
+  { id: 'skills', label: 'Skills', icon: Code2, href: '/skills' },
+  { id: 'projects', label: 'Projects', icon: Briefcase, href: '/projects' },
+  { id: 'career', label: 'Career', icon: User, href: '/career' },
+  { id: 'about-me', label: 'About Me', icon: Mail, href: '/about-me' },
+  { id: 'contact', label: 'Contact', icon: Mail, href: '/contact' },
 ];
 
 export function Header() {
-  const [active, setActive] = useState(sections[0].id);
-  const [isMobile, setIsMobile] = useState(false);
-  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (sections.some((s) => s.id === hash)) {
-        setActive(hash);
-      }
-    };
-    window.addEventListener('hashchange', handleHashChange);
-    handleHashChange();
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (sections.some((s) => s.id === hash)) {
-        setActive(hash);
-        return;
-      }
-      for (let i = 0; i < sections.length; i++) {
-        const el = document.getElementById(sections[i].id);
-        if (el) {
-          sectionRefs.current[sections[i].id] = el;
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 80 && rect.bottom > 80) {
-            setActive(sections[i].id);
-            break;
-          }
-        }
-      }
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
-        setActive('contact');
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const pathname = usePathname();
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   return (
     <header
@@ -83,11 +39,13 @@ export function Header() {
       >
         {sections.map((section) => {
           const Icon = section.icon;
-          const isActive = active === section.id;
+          // Ativo se pathname === href, exceto para home ("/"), que só é ativo se pathname === "/"
+          const isActive =
+            section.href === '/' ? pathname === '/' : pathname.startsWith(section.href);
           return (
-            <a
+            <Link
               key={section.id}
-              href={`#${section.id}`}
+              href={section.href}
               aria-label={section.label}
               aria-current={isActive ? 'page' : undefined}
               tabIndex={0}
@@ -100,10 +58,6 @@ export function Header() {
                 'rounded-full cursor-pointer select-none',
                 !isActive && 'hover:bg-transparent',
               )}
-              onClick={() => {
-                setActive(section.id);
-                window.location.hash = section.id;
-              }}
             >
               <span className="md:hidden">
                 <Icon size={20} strokeWidth={2.2} />
@@ -118,7 +72,7 @@ export function Header() {
                   style={{ top: 0, bottom: 0 }}
                 />
               )}
-            </a>
+            </Link>
           );
         })}
         <ThemeToggleWrapper />

@@ -1,23 +1,23 @@
-import type { JourneyEntry } from '../../../data/journey';
+import type { CareerEntry } from '../../../data/career';
 import Link from 'next/link';
 
-type JourneyProps = {
+type CareerProps = {
   title: string;
   subtitle: string;
-  journey: JourneyEntry[];
+  career: CareerEntry[];
 };
 
-export function Journey({ title, subtitle, journey }: JourneyProps) {
+export function Career({ title, subtitle, career }: CareerProps) {
   return (
     <section>
       <h2>{title}</h2>
       <p>{subtitle}</p>
       <ul>
-        {journey.map((entry) => (
+        {career.map((entry) => (
           <li key={entry.slug}>
             <article>
               <h3>
-                <Link href={`/journey/${entry.slug}`}>
+                <Link href={`/career/${entry.slug}`}>
                   {entry.title} @ {entry.company}
                 </Link>
               </h3>

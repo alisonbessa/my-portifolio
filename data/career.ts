@@ -1,8 +1,8 @@
-export const journeyTitle = 'Professional Journey';
-export const journeySubtitle =
+export const careerTitle = 'Professional Journey';
+export const careerSubtitle =
   'Professional experiences, roles, and main achievements throughout the career.';
 
-export type JourneyEntry = {
+export type CareerEntry = {
   slug: string;
   title: string;
   company: string;
@@ -11,7 +11,7 @@ export type JourneyEntry = {
   highlights: string[];
 };
 
-export const journey: JourneyEntry[] = [
+export const career: CareerEntry[] = [
   {
     slug: 'frontend-lead',
     title: 'Front-End Lead',

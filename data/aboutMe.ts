@@ -1,8 +1,8 @@
-export const personalJourneyTitle = 'Personal Journey';
-export const personalJourneySubtitle =
+export const aboutMeTitle = 'Personal Journey';
+export const aboutMeSubtitle =
   'Stories, challenges, and lessons learned outside the professional environment.';
 
-export type PersonalEntry = {
+export type AboutMeEntry = {
   slug: string;
   title: string;
   date: string;
@@ -12,7 +12,7 @@ export type PersonalEntry = {
   tags: string[];
 };
 
-export const personalJourney: PersonalEntry[] = [
+export const aboutMe: AboutMeEntry[] = [
   {
     slug: 'marathon-challenge',
     title: 'Completing My First Marathon',

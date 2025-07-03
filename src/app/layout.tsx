@@ -1,16 +1,8 @@
-import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
+import type { Metadata } from 'next';
+import { socials, socialsTitle, socialsSubtitle } from '../../data/socials';
 
 export const metadata: Metadata = {
   title: 'My Portfolio',
@@ -24,7 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body>
+        <div className="min-h-screen w-full bg-background flex flex-col">
+          <div className="flex-1 flex flex-col items-center w-full max-w-5xl mx-auto px-4">
+            <Header />
+            <div className="flex-1 w-full flex flex-col pt-20">{children}</div>
+            <Footer title={socialsTitle} subtitle={socialsSubtitle} socials={socials} />
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
