@@ -4,11 +4,9 @@ import { projects, T } from '../../../../data/projects';
 import Image from 'next/image';
 import { TagBadge } from '../../components/TagBadge';
 
-type ProjectPageProps = {
-  params: { slug: string };
-};
-
-export default function ProjectPage({ params }: ProjectPageProps) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function ProjectPage(props: any) {
+  const { params } = props;
   const project = projects.find((p) => p.slug === params.slug);
   if (!project) return notFound();
 
@@ -16,9 +14,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const softTags = (project.tags || []).filter((tag) => T[tag]?.type === 'soft');
 
   return (
-    <main style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
+    <div style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
       <nav style={{ marginBottom: 24 }}>
-        <Link href="/">← Back to Home</Link>
+        <Link href="/projects">← Back to Projects</Link>
       </nav>
       <h1>{project.title}</h1>
       <p>{project.description}</p>
@@ -104,6 +102,6 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           <span style={{ color: 'red', marginLeft: 8 }}>Private Repository</span>
         )}
       </section>
-    </main>
+    </div>
   );
 }

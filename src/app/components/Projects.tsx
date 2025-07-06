@@ -1,7 +1,5 @@
 import type { Project } from '../../../data/projects';
-import Link from 'next/link';
-import { TagBadge } from './TagBadge';
-import { T } from '../../../data/projects';
+import ProjectCard from './ProjectCard';
 
 type ProjectsProps = {
   title: string;
@@ -11,53 +9,16 @@ type ProjectsProps = {
 
 export function Projects({ title, subtitle, projects }: ProjectsProps) {
   return (
-    <section>
-      <h2>{title}</h2>
-      <p>{subtitle}</p>
-      <ul>
-        {projects.map((project) => {
-          const techTags = (project.tags || []).filter((tag) => T[tag]?.type === 'tech');
-          const softTags = (project.tags || []).filter((tag) => T[tag]?.type === 'soft');
-          return (
-            <li key={project.slug}>
-              <article>
-                <h3>
-                  <Link href={`/projects/${project.slug}`}>{project.title}</Link>
-                </h3>
-                <p>{project.description}</p>
-                {project.demoUrl && (
-                  <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                    Demo
-                  </a>
-                )}
-                {project.repoUrl && !project.repoPrivate && (
-                  <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-                    Repository
-                  </a>
-                )}
-                {project.repoPrivate && <span>Private Repository</span>}
-                {techTags.length > 0 && (
-                  <div className="flex flex-wrap mt-2">
-                    <span className="mr-2 font-semibold text-sm">Tech Stack:</span>
-                    {techTags.map((tag) => (
-                      <TagBadge key={tag} tag={tag} />
-                    ))}
-                  </div>
-                )}
-                {softTags.length > 0 && (
-                  <div className="flex flex-wrap mt-2">
-                    <span className="mr-2 font-semibold text-sm">Soft Skills:</span>
-                    {softTags.map((tag) => (
-                      <TagBadge key={tag} tag={tag} />
-                    ))}
-                  </div>
-                )}
-                <p>Date: {project.date}</p>
-              </article>
-            </li>
-          );
-        })}
-      </ul>
+    <section className="flex flex-col items-center py-12 w-full">
+      <div className="text-center mb-10">
+        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight mb-2">{title}</h2>
+        <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto">{subtitle}</p>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8 w-full max-w-6xl">
+        {projects.map((project) => (
+          <ProjectCard key={project.slug} project={project} />
+        ))}
+      </div>
     </section>
   );
 }

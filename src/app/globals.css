@@ -58,7 +58,7 @@
   --radius: 0.625rem;
 
   /* Base Colors */
-  --background: oklch(1 0 0);
+  --background: oklch(0.975 0 0);
   --foreground: oklch(0.145 0 0);
 
   /* Brand Colors */
@@ -106,7 +106,7 @@
 
 /* Dark Theme */
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0.2 0 0);
   --foreground: oklch(0.985 0 0);
 
   /* Brand Colors */
@@ -156,6 +156,9 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    transition-property: color, background-color, border-color, box-shadow;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   *,
@@ -169,6 +172,11 @@
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     font-variation-settings: normal;
     tab-size: 4;
+    transition:
+      background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   body {
@@ -179,6 +187,11 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    transition:
+      background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Typography */
@@ -274,7 +287,7 @@
 /* Component Utilities */
 @layer components {
   .container {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-[940px] px-4 sm:px-6 lg:px-8;
   }
 
   .section {
