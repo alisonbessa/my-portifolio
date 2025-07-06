@@ -4,11 +4,9 @@ import { projects, T } from '../../../../data/projects';
 import Image from 'next/image';
 import { TagBadge } from '../../components/TagBadge';
 
-type ProjectPageProps = {
-  params: { slug: string };
-};
-
-export default async function ProjectPage({ params }: ProjectPageProps) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function ProjectPage(props: any) {
+  const { params } = props;
   const project = projects.find((p) => p.slug === params.slug);
   if (!project) return notFound();
 
