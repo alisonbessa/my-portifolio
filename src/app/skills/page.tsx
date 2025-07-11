@@ -1,6 +1,19 @@
-import { Skills } from '../components/Skills';
-import { skills, skillsTitle, skillsSubtitle } from '../../../data/skills';
+'use client';
+import { skillCategories, skillsTitle, skillsSubtitle } from '../../../data/skills';
+import SkillsTimeline from '../components/SkillsTimeline';
 
 export default function SkillsPage() {
-  return <Skills title={skillsTitle} subtitle={skillsSubtitle} skills={skills} />;
+  return (
+    <div className="w-full font-sans">
+      <div className="max-w-[940px] mx-auto pt-20 text-center">
+        <h2 className="text-3xl sm:text-5xl font-bold tracking-tight mb-2 text-black dark:text-white">
+          {skillsTitle}
+        </h2>
+        <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto dark:text-neutral-300">
+          {skillsSubtitle}
+        </p>
+      </div>
+      <SkillsTimeline entries={skillCategories} />
+    </div>
+  );
 }
