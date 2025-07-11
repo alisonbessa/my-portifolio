@@ -2,10 +2,16 @@ import './globals.css';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import type { Metadata } from 'next';
+import { homeTitle, homeDescription } from '../../data/home';
 
 export const metadata: Metadata = {
-  title: 'My Portfolio',
-  description: 'A boilerplate for building a portfolio website',
+  title: homeTitle,
+  description: homeDescription,
+  icons: {
+    icon: '/profile.png',
+    shortcut: '/profile.png',
+    apple: '/profile.png',
+  },
 };
 
 export default function RootLayout({
