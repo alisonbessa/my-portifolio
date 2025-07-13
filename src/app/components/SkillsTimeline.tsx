@@ -1,6 +1,6 @@
 import { SkillCategory } from '../../../data/skills';
 import Timeline from './Timeline';
-import TimelineEntry from './TimelineEntry';
+import { TimelineEntry } from './TimelineEntry';
 
 type Props = {
   entries: SkillCategory[];
@@ -20,7 +20,7 @@ export default function SkillsTimeline({ entries }: Props) {
       rightContent={
         <div>
           <p className="mb-4 text-lg text-foreground/90">{entry.description}</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
             {entry.skills.map((skill, i) => (
               <div
                 key={i}

@@ -1,6 +1,6 @@
 import { CareerEntry } from '../../../data/career';
 import Timeline from './Timeline';
-import TimelineEntry from './TimelineEntry';
+import { TimelineEntry } from './TimelineEntry';
 
 type Props = {
   entries: CareerEntry[];

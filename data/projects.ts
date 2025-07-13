@@ -103,6 +103,11 @@ export const T = {
     color: 'bg-indigo-200 text-indigo-900',
     type: 'soft',
   },
+  ai: {
+    label: 'AI',
+    color: 'bg-purple-200 text-purple-900',
+    type: 'tech',
+  },
 };
 
 export type Tag = keyof typeof T;
@@ -121,66 +126,90 @@ export type Project = {
   motivation?: string;
   challenges?: string[];
   learnings?: string[];
-  details?: string;
+  details?: { [section: string]: string };
 };
 
 export const projects: Project[] = [
   {
-    slug: 'taskmaster-pro',
-    title: 'TaskMaster Pro',
-    description: 'A productivity app for managing daily tasks and projects collaboratively.',
-    demoUrl: 'https://taskmasterpro.app',
-    repoUrl: 'https://github.com/example/taskmaster-pro',
-    repoPrivate: false,
+    slug: 'hivebudget',
+    title: 'HiveBudget',
+    description: 'A collaborative budgeting platform for personal and group finance management.',
+    repoUrl: 'https://github.com/alisonbessa/hivebudget',
+    repoPrivate: true,
     featured: true,
-    tags: [
-      'productivity',
-      'collaboration',
-      'app',
-      'javascript',
-      'typescript',
-      'communication',
-      'problem-solving',
-      'teamwork',
-    ],
-    date: '2024-05-10',
-    thumbnail: '/images/projects/taskmaster-thumb.png',
-    motivation: 'To help teams and individuals organize their work and boost productivity.',
+    tags: ['dashboard', 'app', 'typescript', 'problem-solving'],
+    date: '2024-12-15',
+    thumbnail: '/images/projects/hivebudget-thumb.png',
+    motivation: 'To make personal and group financial planning more collaborative and effective.',
     challenges: [
-      'Designing a real-time collaborative editing experience',
-      'Ensuring data consistency across devices',
+      'Implementing a robust role-based access control system for multi-user collaboration',
+      'Integrating external services (Stripe for payments, AWS S3 storage, etc.) into the budgeting workflow',
     ],
     learnings: [
-      'Deepened knowledge of WebSockets and real-time data flows',
-      'Improved UI/UX for productivity tools',
+      'Gained experience with advanced Next.js features (App Router, NextAuth) and type-safe ORM (Drizzle) in a full-stack application',
+      'Learned best practices for secure handling of financial data and third-party API integrations',
     ],
-    details:
-      'TaskMaster Pro allows users to create, assign, and track tasks in real time, with advanced filtering and analytics.',
+    details: {
+      Overview:
+        'HiveBudget is a collaborative financial planning platform for managing personal or group finances through shared groups called "Hives". It allows users to organize income, expenses, and budgets collectively with features like role-based access control and interactive financial reports.',
+      'Key Features':
+        'Key features include collaborative budgeting groups with role-based permissions (Owner, Admin, Editor, Viewer), intelligent transaction categorization, budgeting goals tracking, detailed charts for financial analysis, and secure authentication with multiple sign-in options.',
+    },
   },
   {
-    slug: 'weatherly',
-    title: 'Weatherly',
-    description: 'A weather dashboard providing real-time forecasts and climate analytics.',
+    slug: 'intelimeet',
+    title: 'InteliMeet',
+    description:
+      'An intelligent meeting room app with AI-driven Q&A assistance and audio recording features.',
+    repoUrl: 'https://github.com/alisonbessa/intelimeet-web',
     repoPrivate: true,
     featured: false,
-    tags: [
-      'weather',
-      'dashboard',
-      'javascript',
-      'css',
-      'adaptability',
-      'resilience',
-      'critical-thinking',
-    ],
-    date: '2023-09-15',
-    thumbnail: '/images/projects/weatherly-thumb.png',
-    motivation: 'To make weather data more accessible and actionable for everyday users.',
+    tags: ['ai', 'app', 'typescript', 'problem-solving', 'creativity', 'critical-thinking'],
+    date: '2024-08-01',
+    thumbnail: '/images/projects/intelimeet-thumb.png',
+    motivation:
+      'To enhance virtual meetings by providing an AI assistant that can answer questions in real time and record meeting discussions.',
     challenges: [
-      'Integrating multiple third-party weather APIs',
-      'Handling inconsistent data formats',
+      'Integrating an AI Q&A system that provides accurate real-time answers during meetings',
+      'Managing real-time audio recording and playback in the browser without disrupting the user experience',
     ],
-    learnings: ['API normalization strategies', 'Building robust error handling for external data'],
-    details:
-      'Weatherly aggregates weather data from several sources, providing users with accurate forecasts and climate trends.',
+    learnings: [
+      'Deepened knowledge of integrating AI services (NLP models) into web applications for domain-specific Q&A',
+      'Learned how to build interactive, real-time features (like live Q&A and audio capture) with responsive UI/UX considerations',
+    ],
+    details: {
+      Overview:
+        'InteliMeet is a web application for intelligent virtual meetings. Each meeting room provides a Q&A interface where participants can ask questions and receive answers from an AI assistant in real time. The platform also allows recording the meeting audio for future reference.',
+      'Key Features':
+        "Key features include the ability to create dedicated meeting rooms, an AI-driven Q&A system that generates answers to participants' questions on the fly, and an option to record and replay meeting audio for archiving discussions.",
+    },
+  },
+  {
+    slug: 'my-portfolio',
+    title: 'My Portfolio',
+    description:
+      'My personal developer portfolio website built with a modern web stack to showcase projects and skills.',
+    repoUrl: 'https://github.com/alisonbessa/my-portfolio',
+    repoPrivate: false,
+    featured: false,
+    tags: ['app', 'javascript', 'typescript', 'css', 'creativity', 'problem-solving'],
+    date: '2025-07-01',
+    thumbnail: '/images/projects/my-portfolio-thumb.png',
+    motivation:
+      'To create a professional online presence and demonstrate my skills through a customized portfolio site.',
+    challenges: [
+      'Ensuring the site design is fully responsive and includes a toggleable dark/light theme for better UX',
+      'Structuring the project for easy content management (using a data-driven approach) so updates can be made without touching layout code',
+    ],
+    learnings: [
+      'Learned to enforce code quality and standards using tools like ESLint, Prettier, Husky, and lint-staged',
+      'Strengthened skills in building responsive UIs and theme toggles with Next.js and Tailwind CSS',
+    ],
+    details: {
+      Overview:
+        'My Portfolio is a personal website to showcase my projects, skills, and experience. Built with Next.js, TypeScript, and Tailwind CSS, it features a modern design and is easily customizable and maintainable.',
+      'Key Features':
+        'Key features include a mobile-responsive layout with a dark/light theme toggle for user preference, a structured content management system (using a dedicated data folder) for easy updates, and integration of pre-commit tools to maintain high code quality standards.',
+    },
   },
 ];

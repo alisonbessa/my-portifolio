@@ -1,5 +1,5 @@
 import type { Project } from '../../../data/projects';
-import ProjectCard from './ProjectCard';
+import { ProjectCard } from './ProjectCard';
 
 type ProjectsProps = {
   title: string;
