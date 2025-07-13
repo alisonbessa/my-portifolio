@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { T } from '../../../data/projects';
 import Link from 'next/link';
 
-export default function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project }: { project: Project }) {
   const techTags = (project.tags || []).filter((tag) => T[tag]?.type === 'tech');
   const softTags = (project.tags || []).filter((tag) => T[tag]?.type === 'soft');
   return (
@@ -21,7 +21,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             />
           </div>
         ) : (
-          <div className="mb-3 w-full flex justify-center" style={{ height: 180 }} />
+          <div className="mb-3 w-full flex justify-center h-[180px]" />
         )}
         <h3 className="text-xl font-bold mb-1 text-primary">
           <Link
@@ -32,26 +32,26 @@ export default function ProjectCard({ project }: { project: Project }) {
           </Link>
         </h3>
         <p className="mb-3 text-base text-foreground/90">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-2">
-          {techTags.length > 0 && (
-            <>
-              <span className="mr-2 font-semibold text-sm">Tech Stack:</span>
+        {techTags.length > 0 && (
+          <div className="mb-3">
+            <h4 className="font-semibold text-sm mb-2">Tech Stack:</h4>
+            <div className="flex flex-wrap gap-2">
               {techTags.map((tag) => (
                 <TagBadge key={tag} tag={tag} />
               ))}
-            </>
-          )}
-        </div>
-        <div className="flex flex-wrap gap-2 mb-2">
-          {softTags.length > 0 && (
-            <>
-              <span className="mr-2 font-semibold text-sm">Soft Skills:</span>
+            </div>
+          </div>
+        )}
+        {softTags.length > 0 && (
+          <div className="mb-3">
+            <h4 className="font-semibold text-sm mb-2">Soft Skills:</h4>
+            <div className="flex flex-wrap gap-2">
               {softTags.map((tag) => (
                 <TagBadge key={tag} tag={tag} />
               ))}
-            </>
-          )}
-        </div>
+            </div>
+          </div>
+        )}
         <div className="flex flex-wrap gap-4 mt-auto pt-2">
           {project.demoUrl && (
             <a

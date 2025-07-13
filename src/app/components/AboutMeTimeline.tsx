@@ -1,6 +1,6 @@
 import { AboutMeEntry } from '../../../data/aboutMe';
 import Timeline from './Timeline';
-import TimelineEntry from './TimelineEntry';
+import { TimelineEntry } from './TimelineEntry';
 import AboutMeTimelineImages from './AboutMeTimelineImages';
 import AboutMeTimelineTags from './AboutMeTimelineTags';
 

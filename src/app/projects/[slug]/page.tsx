@@ -1,107 +1,43 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { projects, T } from '../../../../data/projects';
+import { projects } from '../../../../data/projects';
+import ProjectTimeline from '../../components/ProjectTimeline';
 import Image from 'next/image';
-import { TagBadge } from '../../components/TagBadge';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function ProjectPage(props: any) {
-  const { params } = props;
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
   if (!project) return notFound();
 
-  const techTags = (project.tags || []).filter((tag) => T[tag]?.type === 'tech');
-  const softTags = (project.tags || []).filter((tag) => T[tag]?.type === 'soft');
-
   return (
-    <div style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
-      <nav style={{ marginBottom: 24 }}>
-        <Link href="/projects">← Back to Projects</Link>
-      </nav>
-      <h1>{project.title}</h1>
-      <p>{project.description}</p>
-      {project.thumbnail && (
-        <Image
-          src={project.thumbnail}
-          alt={project.title}
-          width={600}
-          height={340}
-          style={{ borderRadius: 8 }}
-        />
-      )}
-      <section>
-        {techTags.length > 0 && (
-          <div className="flex flex-wrap mt-2 mb-2">
-            <span className="mr-2 font-semibold text-sm">Tech Stack:</span>
-            {techTags.map((tag) => (
-              <TagBadge key={tag} tag={tag} />
-            ))}
-          </div>
-        )}
-        {softTags.length > 0 && (
-          <div className="flex flex-wrap mt-2 mb-2">
-            <span className="mr-2 font-semibold text-sm">Soft Skills:</span>
-            {softTags.map((tag) => (
-              <TagBadge key={tag} tag={tag} />
-            ))}
-          </div>
-        )}
-        <p>
-          <strong>Date:</strong> {project.date}
-        </p>
-      </section>
-      {project.details && (
-        <section>
-          <h2>Details</h2>
-          <p>{project.details}</p>
-        </section>
-      )}
-      {project.motivation && (
-        <section>
-          <h2>Motivation</h2>
-          <p>{project.motivation}</p>
-        </section>
-      )}
-      {project.challenges && project.challenges.length > 0 && (
-        <section>
-          <h2>Challenges</h2>
-          <ul>
-            {project.challenges.map((c, i) => (
-              <li key={i}>{c}</li>
-            ))}
-          </ul>
-        </section>
-      )}
-      {project.learnings && project.learnings.length > 0 && (
-        <section>
-          <h2>Learnings</h2>
-          <ul>
-            {project.learnings.map((l, i) => (
-              <li key={i}>{l}</li>
-            ))}
-          </ul>
-        </section>
-      )}
-      <section style={{ marginTop: 24 }}>
-        {project.demoUrl && (
-          <a
-            href={project.demoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ marginRight: 16 }}
+    <div className="w-full font-sans">
+      <div className="max-w-[940px] mx-auto pt-5 lg:pt-20">
+        <nav className="mb-6">
+          <Link
+            href="/projects"
+            className="text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-2"
           >
-            Live Demo
-          </a>
+            ← Back to Projects
+          </Link>
+        </nav>
+        {project.thumbnail && (
+          <div className="mb-8">
+            <Image
+              src={project.thumbnail}
+              alt={project.title}
+              width={800}
+              height={400}
+              className="rounded-lg object-cover w-full max-h-96"
+            />
+          </div>
         )}
-        {project.repoUrl && !project.repoPrivate && (
-          <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-            Repository
-          </a>
-        )}
-        {project.repoPrivate && (
-          <span style={{ color: 'red', marginLeft: 8 }}>Private Repository</span>
-        )}
-      </section>
+        <div className="text-center mb-8">
+          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight mb-2 text-black dark:text-white">
+            {project.title}
+          </h1>
+        </div>
+      </div>
+      <ProjectTimeline project={project} />
     </div>
   );
 }

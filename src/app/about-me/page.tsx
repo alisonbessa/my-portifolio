@@ -5,7 +5,7 @@ import AboutMeTimeline from '../components/AboutMeTimeline';
 export default function AboutMePage() {
   return (
     <div className="w-full font-sans">
-      <div className="max-w-[940px] mx-auto pt-20 text-center">
+      <div className="max-w-[940px] mx-auto pt-10 md:pt-20 text-center">
         <h2 className="text-3xl sm:text-5xl font-bold tracking-tight mb-2 text-black dark:text-white">
           {aboutMeTitle}
         </h2>
