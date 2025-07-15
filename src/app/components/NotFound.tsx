@@ -12,8 +12,8 @@ export function NotFound({
   message?: string;
 }) {
   return (
-    <div style={{ maxWidth: 700, margin: '0 auto', padding: 24 }}>
-      <nav style={{ marginBottom: 24 }}>
+    <div className="max-w-[700px] mx-auto p-6">
+      <nav className="mb-6">
         <Link href={backHref}>{backLabel}</Link>
       </nav>
       <h1>{title}</h1>

@@ -64,10 +64,7 @@ export function Header() {
                 {section.label}
               </span>
               {isActive && (
-                <span
-                  className="absolute left-0 top-0 h-full w-full bg-white/40 border border-border rounded-full shadow-sm dark:shadow-[0_2px_8px_0_rgba(255,255,255,0.08)] -z-10 transition-all duration-300 ease-out"
-                  style={{ top: 0, bottom: 0 }}
-                />
+                <span className="absolute left-0 top-0 h-full w-full bg-white/40 border border-border rounded-full shadow-sm dark:shadow-[0_2px_8px_0_rgba(255,255,255,0.08)] -z-10 transition-all duration-300 ease-out" />
               )}
             </Link>
           );

@@ -18,7 +18,7 @@ const iconMap = {
 
 export default function ContactPage() {
   return (
-    <section className="flex flex-col items-center py-12 w-full">
+    <section className="flex flex-col items-center pt-10 md:pt-20 w-full">
       <div className="text-center mb-10">
         <h2 className="text-3xl sm:text-5xl font-bold tracking-tight mb-2">{socialsTitle}</h2>
         <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto">
