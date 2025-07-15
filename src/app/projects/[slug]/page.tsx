@@ -3,6 +3,51 @@ import { notFound } from 'next/navigation';
 import { projects } from '../../../../data/projects';
 import ProjectTimeline from '../../components/ProjectTimeline';
 import Image from 'next/image';
+import type { Metadata } from 'next';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
+import { defaultSEO } from '../../../../data/seo';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+
+  if (!project) {
+    return generateSEOMetadata(defaultSEO);
+  }
+
+  const seoConfig = {
+    ...defaultSEO,
+    title: `${project.title} | Alison Bessa`,
+    description:
+      project.description ||
+      `Project ${project.title} developed by Alison Bessa. See details, technologies used and results achieved.`,
+    url: `${defaultSEO.url}/projects/${project.slug}`,
+    keywords: [
+      ...defaultSEO.keywords,
+      project.title,
+      'project',
+      'development',
+      ...(project.tags || []),
+    ],
+    image: {
+      ...defaultSEO.image,
+      url: project.thumbnail || defaultSEO.image.url,
+      alt: `${project.title} - Alison Bessa`,
+    },
+  };
+
+  return generateSEOMetadata(seoConfig);
+}
+
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

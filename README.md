@@ -179,7 +179,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🌟 Features Roadmap
 
-- [ ] SEO optimization
+- [x] SEO optimization
 - [ ] Analytics integration
 - [ ] Blog/Article system
 - [ ] Multi-language support
