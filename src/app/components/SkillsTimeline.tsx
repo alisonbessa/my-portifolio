@@ -1,3 +1,4 @@
+'use client';
 import { SkillCategory } from '../../../data/skills';
 import Timeline from './Timeline';
 import { TimelineEntry } from './TimelineEntry';

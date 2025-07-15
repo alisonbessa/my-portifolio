@@ -1,3 +1,4 @@
+'use client';
 import { Project } from '../../../data/projects';
 import Timeline from './Timeline';
 import { TimelineEntry } from './TimelineEntry';
