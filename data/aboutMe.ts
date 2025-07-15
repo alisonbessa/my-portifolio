@@ -56,7 +56,7 @@ export const aboutMe: AboutMeEntry[] = [
     title: 'Robot Wars and an Unexpected Handshake',
     images: ['/images/about/5.png', '/images/about/6.png'],
     description:
-      'At RoboGames 2010, I was the pilot of our 55kg combat robot. We beat the undefeated world champion in the opening match, and Grant Imahara from MythBusters came over and shook my hand. That moment is still surreal.',
+      'At RoboGames 2010, I was the pilot of our main catagory combat robot. We beat the undefeated world champion in the opening match, and Grant Imahara from MythBusters came over and shook my hand. That moment is still surreal.',
     reflections: [
       'Hard work behind the scenes leads to magic on stage.',
       'Wins feel better when shared with a great team.',

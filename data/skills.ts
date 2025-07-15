@@ -42,7 +42,6 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Material UI', level: 'advanced' },
       { name: 'ShadCN UI', level: 'advanced' },
       { name: 'Component System Design', level: 'advanced' },
-      { name: 'Design Tokens', level: 'advanced' },
       { name: 'Figma', level: 'intermediate' },
       { name: 'Storybook', level: 'intermediate' },
     ],
@@ -57,8 +56,6 @@ export const skillCategories: SkillCategory[] = [
       { name: 'React Testing Library', level: 'intermediate' },
       { name: 'Vitest', level: 'intermediate' },
       { name: 'Playwright', level: 'beginner' },
-      { name: 'ESLint', level: 'advanced' },
-      { name: 'Prettier', level: 'advanced' },
     ],
   },
   {
