@@ -18,6 +18,8 @@ export function ProjectCard({ project }: { project: Project }) {
               width={320}
               height={180}
               className="rounded-lg object-cover max-h-40 w-full"
+              loading="lazy"
+              quality={75}
             />
           </div>
         ) : (

@@ -25,6 +25,8 @@ export function Hero({ title, subtitle, description, resumeLink }: HeroProps) {
               className="rounded-full shadow-lg object-cover w-28 h-28 sm:w-40 sm:h-40 md:w-44 md:h-60 transition-all duration-700 ease-out"
               onError={() => setImgExists(false)}
               priority
+              loading="eager"
+              quality={85}
             />
           </div>
         )}
