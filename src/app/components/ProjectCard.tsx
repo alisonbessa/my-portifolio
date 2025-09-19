@@ -21,7 +21,7 @@ export function ProjectCard({ project }: { project: Project }) {
               alt={project.title}
               width={320}
               height={180}
-              className="rounded-lg object-cover max-h-40 w-full"
+              className="rounded-lg object-contain max-h-40 w-full bg-muted/20"
               loading="lazy"
               quality={75}
             />
