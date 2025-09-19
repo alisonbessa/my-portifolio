@@ -142,7 +142,7 @@ export const projects: Project[] = [
     description:
       'A modern, real-time collaborative list application built with Next.js 15, Supabase, and Drizzle ORM.',
     demoUrl: 'https://the-easy-list.vercel.app',
-    repoUrl: 'https://github.com/alisonbessa/the-easy-list',
+    repoUrl: 'https://github.com/alisonbessa/easy-list',
     repoPrivate: true,
     featured: true,
     workInProgress: false,

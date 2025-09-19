@@ -23,14 +23,21 @@ export function ProjectCard({ project }: { project: Project }) {
         ) : (
           <div className="mb-3 w-full flex justify-center h-[180px]" />
         )}
-        <h3 className="text-xl font-bold mb-1 text-primary">
-          <Link
-            href={`/projects/${project.slug}`}
-            className="hover:underline hover:text-primary transition-colors"
-          >
-            {project.title}
-          </Link>
-        </h3>
+        <div className="flex items-center gap-2 mb-1">
+          <h3 className="text-xl font-bold text-primary">
+            <Link
+              href={`/projects/${project.slug}`}
+              className="hover:underline hover:text-primary transition-colors"
+            >
+              {project.title}
+            </Link>
+          </h3>
+          {project.workInProgress && (
+            <span className="bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 text-xs px-2 py-1 rounded-full font-medium">
+              🚧 WIP
+            </span>
+          )}
+        </div>
         <p className="mb-3 text-base text-foreground/90">{project.description}</p>
         {techTags.length > 0 && (
           <div className="mb-3">
