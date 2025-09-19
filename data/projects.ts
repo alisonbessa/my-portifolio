@@ -137,6 +137,42 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'the-easy-list',
+    title: 'The Easy List',
+    description:
+      'A modern, real-time collaborative list application built with Next.js 15, Supabase, and Drizzle ORM.',
+    demoUrl: 'https://the-easy-list.vercel.app',
+    repoUrl: 'https://github.com/alisonbessa/easy-list',
+    repoPrivate: true,
+    featured: true,
+    workInProgress: false,
+    tags: ['app', 'typescript', 'ai', 'collaboration', 'productivity', 'problem-solving', 'nextjs'],
+    date: '2024-12-01',
+    thumbnail: '/images/projects/the-easy-list-thumb.png',
+    motivation:
+      'To create a seamless collaborative list-making experience with real-time features and AI assistance.',
+    challenges: [
+      'Implementing real-time collaboration with multiple users editing simultaneously',
+      'Integrating AI-powered list generation with natural language processing',
+      'Building a robust drag-and-drop system for categories and items',
+      'Ensuring accessibility compliance (WCAG 2.1 AA) while maintaining modern UX',
+    ],
+    learnings: [
+      'Mastered real-time database subscriptions with Supabase for live collaboration',
+      'Gained experience with Google Generative AI integration for smart content creation',
+      'Developed skills in building accessible, keyboard-navigable interfaces',
+      'Learned to implement comprehensive internationalization (i18n) systems',
+    ],
+    details: {
+      'Detailed Overview':
+        'The Easy List is a collaborative list application that enables multiple users to create, edit, and organize lists in real-time. It features AI-powered list generation, drag-and-drop categorization, template systems, and anonymous collaboration capabilities.',
+      'Key Features':
+        'Real-time collaboration with live member presence, AI-powered list generation using Google Gemini, drag-and-drop organization between categories, template system for reusable lists, batch operations for multiple items, full internationalization (EN/PT-BR), accessibility-first design with keyboard navigation, and anonymous or authenticated usage.',
+      'Technical Highlights':
+        'Built with Next.js 15 App Router, Supabase for real-time database and authentication, Drizzle ORM for type-safe queries, shadcn/ui components with Tailwind CSS, and comprehensive testing with CI/CD pipeline through GitHub Actions.',
+    },
+  },
+  {
     slug: 'hivebudget',
     title: 'HiveBudget',
     demoUrl: 'https://hivebudget.com',

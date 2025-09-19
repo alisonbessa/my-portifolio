@@ -3,6 +3,7 @@ import type { SEOConfig } from '../../data/seo';
 
 export function generateMetadata(seoConfig: SEOConfig): Metadata {
   return {
+    metadataBase: seoConfig.metadataBase,
     title: seoConfig.title,
     description: seoConfig.description,
     keywords: seoConfig.keywords.join(', '),
@@ -39,15 +40,15 @@ export function generateMetadata(seoConfig: SEOConfig): Metadata {
     },
     icons: {
       icon: [
-        { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-        { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-        { url: '/favicon.ico', sizes: 'any' },
+        { url: '/profile1x1.png', sizes: '32x32', type: 'image/png' },
+        { url: '/profile1x1.png', sizes: '16x16', type: 'image/png' },
+        { url: '/profile1x1.png', sizes: 'any' },
       ],
-      apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+      apple: [{ url: '/profile1x1.png', sizes: '180x180', type: 'image/png' }],
       other: [
         {
           rel: 'mask-icon',
-          url: '/safari-pinned-tab.svg',
+          url: '/profile1x1.png',
           color: '#000000',
         },
       ],
@@ -79,6 +80,7 @@ export function generateStructuredData(seoConfig: SEOConfig) {
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'São Paulo',
+      addressRegion: 'SP',
       addressCountry: 'BR',
     },
     knowsAbout: [
@@ -87,14 +89,44 @@ export function generateStructuredData(seoConfig: SEOConfig) {
       'React',
       'Next.js',
       'Node.js',
+      'Python',
+      'PostgreSQL',
+      'MongoDB',
+      'AWS',
+      'Docker',
+      'Git',
+      'REST APIs',
+      'GraphQL',
       'Full Stack Development',
       'Web Development',
       'Software Engineering',
+      'Frontend Development',
+      'Backend Development',
+      'Database Design',
+      'UI/UX Implementation',
+      'Responsive Web Design',
+      'Mobile Development',
+      'DevOps',
+      'Agile Methodology',
     ],
-    alumniOf: 'Universidade Federal de Itajubá',
+    alumniOf: {
+      '@type': 'EducationalOrganization',
+      name: 'Universidade Federal de Itajubá',
+      alternateName: 'UNIFEI',
+    },
     worksFor: {
       '@type': 'Organization',
       name: 'Freelancer',
+    },
+    hasOccupation: {
+      '@type': 'Occupation',
+      name: 'Full Stack Developer',
+      occupationalCategory: 'Software Development',
+      skills: 'React, TypeScript, Next.js, Node.js, JavaScript, Python, Web Development',
+    },
+    nationality: {
+      '@type': 'Country',
+      name: 'Brazil',
     },
   };
 }

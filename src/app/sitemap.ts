@@ -2,6 +2,8 @@ import { MetadataRoute } from 'next';
 import { defaultSEO } from '../../data/seo';
 import { projects } from '../../data/projects';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = defaultSEO.url;
 

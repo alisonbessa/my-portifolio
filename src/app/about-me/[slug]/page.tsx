@@ -3,6 +3,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { NotFound } from '../../components/NotFound';
 
+export function generateStaticParams() {
+  return aboutMe.map((entry) => ({
+    slug: entry.slug,
+  }));
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function AboutMeDetailPage(props: any) {
   const { params } = props;

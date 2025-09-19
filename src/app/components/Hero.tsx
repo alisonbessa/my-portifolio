@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 interface HeroProps {
   title: string;
@@ -11,6 +12,7 @@ interface HeroProps {
 
 export function Hero({ title, subtitle, description, resumeLink }: HeroProps) {
   const [imgExists, setImgExists] = useState(true);
+  const { trackDownload } = useAnalytics();
 
   return (
     <section className="flex flex-1 flex-col items-center text-center md:text-left gap-8 pt-8 sm:pt-12">
@@ -25,6 +27,8 @@ export function Hero({ title, subtitle, description, resumeLink }: HeroProps) {
               className="rounded-full shadow-lg object-cover w-28 h-28 sm:w-40 sm:h-40 md:w-44 md:h-60 transition-all duration-700 ease-out"
               onError={() => setImgExists(false)}
               priority
+              loading="eager"
+              quality={85}
             />
           </div>
         )}
@@ -50,6 +54,7 @@ export function Hero({ title, subtitle, description, resumeLink }: HeroProps) {
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-primary transition-colors"
+              onClick={() => trackDownload('resume.pdf')}
             >
               download my resume
             </a>

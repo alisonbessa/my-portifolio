@@ -12,6 +12,9 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript', 'plugin:prettier/recommended'),
   // TailwindCSS plugin temporarily removed due to incompatibility with Tailwind v4
+  {
+    ignores: ['package.json'],
+  },
 ];
 
 export default eslintConfig;
