@@ -204,37 +204,37 @@ export const projects: Project[] = [
         'Key features include collaborative budgeting groups with role-based permissions (Owner, Admin, Editor, Viewer), intelligent transaction categorization, budgeting goals tracking, detailed charts for financial analysis, and secure authentication with multiple sign-in options.',
     },
   },
-  // {
-  //   slug: 'intelimeet',
-  //   title: 'InteliMeet',
-  //   description:
-  //     'An intelligent meeting room app with AI-driven Q&A assistance and audio recording features.',
-  //   repoUrl: 'https://github.com/alisonbessa/intelimeet-web',
-  //   repoPrivate: false,
-  //   featured: false,
-  //   workInProgress: true,
-  //   tags: ['ai', 'typescript', 'problem-solving', 'creativity', 'critical-thinking', 'nextjs'],
-  //   date: '2024-08-01',
-  //   thumbnail: '/images/projects/intelimeet-thumb.png',
-  //   motivation:
-  //     'To enhance virtual meetings by providing an AI assistant that can answer questions in real time and record meeting discussions.',
-  //   challenges: [
-  //     'Integrating an AI Q&A system that provides accurate real-time answers during meetings',
-  //     'Managing real-time audio recording and playback in the browser without disrupting the user experience',
-  //   ],
-  //   learnings: [
-  //     'Deepened knowledge of integrating AI services (NLP models) into web applications for domain-specific Q&A',
-  //     'Learned how to build interactive, real-time features (like live Q&A and audio capture) with responsive UI/UX considerations',
-  //   ],
-  //   details: {
-  //     Overview:
-  //       'InteliMeet is a web application for intelligent virtual meetings. Each meeting room provides a Q&A interface where participants can ask questions and receive answers from an AI assistant in real time. The platform also allows recording the meeting audio for future reference.',
-  //     'Key Features':
-  //       "Key features include the ability to create dedicated meeting rooms, an AI-driven Q&A system that generates answers to participants' questions on the fly, and an option to record and replay meeting audio for archiving discussions.",
-  //     'Next features':
-  //       'The next tasks are to improve the audio chunk creation parameters and the parameters used by the AI. Create a speaker area where they have a better view of the questions and can answer them. Create an authentication system for better user control.',
-  //   },
-  // },
+  {
+    slug: 'intelimeet',
+    title: 'InteliMeet',
+    description:
+      'An intelligent meeting room app with AI-driven Q&A assistance and audio recording features.',
+    repoUrl: 'https://github.com/alisonbessa/intelimeet-web',
+    repoPrivate: false,
+    featured: false,
+    workInProgress: true,
+    tags: ['ai', 'typescript', 'problem-solving', 'creativity', 'critical-thinking', 'nextjs'],
+    date: '2024-08-01',
+    thumbnail: '/images/projects/intelimeet-thumb.png',
+    motivation:
+      'To enhance virtual meetings by providing an AI assistant that can answer questions in real time and record meeting discussions.',
+    challenges: [
+      'Integrating an AI Q&A system that provides accurate real-time answers during meetings',
+      'Managing real-time audio recording and playback in the browser without disrupting the user experience',
+    ],
+    learnings: [
+      'Deepened knowledge of integrating AI services (NLP models) into web applications for domain-specific Q&A',
+      'Learned how to build interactive, real-time features (like live Q&A and audio capture) with responsive UI/UX considerations',
+    ],
+    details: {
+      Overview:
+        'InteliMeet is a web application for intelligent virtual meetings. Each meeting room provides a Q&A interface where participants can ask questions and receive answers from an AI assistant in real time. The platform also allows recording the meeting audio for future reference.',
+      'Key Features':
+        "Key features include the ability to create dedicated meeting rooms, an AI-driven Q&A system that generates answers to participants' questions on the fly, and an option to record and replay meeting audio for archiving discussions.",
+      'Next features':
+        'The next tasks are to improve the audio chunk creation parameters and the parameters used by the AI. Create a speaker area where they have a better view of the questions and can answer them. Create an authentication system for better user control.',
+    },
+  },
   {
     slug: 'my-portfolio',
     title: 'My Portfolio',
