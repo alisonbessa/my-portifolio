@@ -137,6 +137,42 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'the-easy-list',
+    title: 'The Easy List',
+    description:
+      'A modern, real-time collaborative list application built with Next.js 15, Supabase, and Drizzle ORM.',
+    demoUrl: 'https://the-easy-list.vercel.app',
+    repoUrl: 'https://github.com/alisonbessa/the-easy-list',
+    repoPrivate: true,
+    featured: true,
+    workInProgress: false,
+    tags: ['app', 'typescript', 'ai', 'collaboration', 'productivity', 'problem-solving', 'nextjs'],
+    date: '2024-12-01',
+    thumbnail: '/images/projects/the-easy-list-thumb.png',
+    motivation:
+      'To create a seamless collaborative list-making experience with real-time features and AI assistance.',
+    challenges: [
+      'Implementing real-time collaboration with multiple users editing simultaneously',
+      'Integrating AI-powered list generation with natural language processing',
+      'Building a robust drag-and-drop system for categories and items',
+      'Ensuring accessibility compliance (WCAG 2.1 AA) while maintaining modern UX',
+    ],
+    learnings: [
+      'Mastered real-time database subscriptions with Supabase for live collaboration',
+      'Gained experience with Google Generative AI integration for smart content creation',
+      'Developed skills in building accessible, keyboard-navigable interfaces',
+      'Learned to implement comprehensive internationalization (i18n) systems',
+    ],
+    details: {
+      'Detailed Overview':
+        'The Easy List is a collaborative list application that enables multiple users to create, edit, and organize lists in real-time. It features AI-powered list generation, drag-and-drop categorization, template systems, and anonymous collaboration capabilities.',
+      'Key Features':
+        'Real-time collaboration with live member presence, AI-powered list generation using Google Gemini, drag-and-drop organization between categories, template system for reusable lists, batch operations for multiple items, full internationalization (EN/PT-BR), accessibility-first design with keyboard navigation, and anonymous or authenticated usage.',
+      'Technical Highlights':
+        'Built with Next.js 15 App Router, Supabase for real-time database and authentication, Drizzle ORM for type-safe queries, shadcn/ui components with Tailwind CSS, and comprehensive testing with CI/CD pipeline through GitHub Actions.',
+    },
+  },
+  {
     slug: 'hivebudget',
     title: 'HiveBudget',
     demoUrl: 'https://hivebudget.com',
@@ -168,37 +204,37 @@ export const projects: Project[] = [
         'Key features include collaborative budgeting groups with role-based permissions (Owner, Admin, Editor, Viewer), intelligent transaction categorization, budgeting goals tracking, detailed charts for financial analysis, and secure authentication with multiple sign-in options.',
     },
   },
-  {
-    slug: 'intelimeet',
-    title: 'InteliMeet',
-    description:
-      'An intelligent meeting room app with AI-driven Q&A assistance and audio recording features.',
-    repoUrl: 'https://github.com/alisonbessa/intelimeet-web',
-    repoPrivate: false,
-    featured: false,
-    workInProgress: true,
-    tags: ['ai', 'typescript', 'problem-solving', 'creativity', 'critical-thinking', 'nextjs'],
-    date: '2024-08-01',
-    thumbnail: '/images/projects/intelimeet-thumb.png',
-    motivation:
-      'To enhance virtual meetings by providing an AI assistant that can answer questions in real time and record meeting discussions.',
-    challenges: [
-      'Integrating an AI Q&A system that provides accurate real-time answers during meetings',
-      'Managing real-time audio recording and playback in the browser without disrupting the user experience',
-    ],
-    learnings: [
-      'Deepened knowledge of integrating AI services (NLP models) into web applications for domain-specific Q&A',
-      'Learned how to build interactive, real-time features (like live Q&A and audio capture) with responsive UI/UX considerations',
-    ],
-    details: {
-      Overview:
-        'InteliMeet is a web application for intelligent virtual meetings. Each meeting room provides a Q&A interface where participants can ask questions and receive answers from an AI assistant in real time. The platform also allows recording the meeting audio for future reference.',
-      'Key Features':
-        "Key features include the ability to create dedicated meeting rooms, an AI-driven Q&A system that generates answers to participants' questions on the fly, and an option to record and replay meeting audio for archiving discussions.",
-      'Next features':
-        'The next tasks are to improve the audio chunk creation parameters and the parameters used by the AI. Create a speaker area where they have a better view of the questions and can answer them. Create an authentication system for better user control.',
-    },
-  },
+  // {
+  //   slug: 'intelimeet',
+  //   title: 'InteliMeet',
+  //   description:
+  //     'An intelligent meeting room app with AI-driven Q&A assistance and audio recording features.',
+  //   repoUrl: 'https://github.com/alisonbessa/intelimeet-web',
+  //   repoPrivate: false,
+  //   featured: false,
+  //   workInProgress: true,
+  //   tags: ['ai', 'typescript', 'problem-solving', 'creativity', 'critical-thinking', 'nextjs'],
+  //   date: '2024-08-01',
+  //   thumbnail: '/images/projects/intelimeet-thumb.png',
+  //   motivation:
+  //     'To enhance virtual meetings by providing an AI assistant that can answer questions in real time and record meeting discussions.',
+  //   challenges: [
+  //     'Integrating an AI Q&A system that provides accurate real-time answers during meetings',
+  //     'Managing real-time audio recording and playback in the browser without disrupting the user experience',
+  //   ],
+  //   learnings: [
+  //     'Deepened knowledge of integrating AI services (NLP models) into web applications for domain-specific Q&A',
+  //     'Learned how to build interactive, real-time features (like live Q&A and audio capture) with responsive UI/UX considerations',
+  //   ],
+  //   details: {
+  //     Overview:
+  //       'InteliMeet is a web application for intelligent virtual meetings. Each meeting room provides a Q&A interface where participants can ask questions and receive answers from an AI assistant in real time. The platform also allows recording the meeting audio for future reference.',
+  //     'Key Features':
+  //       "Key features include the ability to create dedicated meeting rooms, an AI-driven Q&A system that generates answers to participants' questions on the fly, and an option to record and replay meeting audio for archiving discussions.",
+  //     'Next features':
+  //       'The next tasks are to improve the audio chunk creation parameters and the parameters used by the AI. Create a speaker area where they have a better view of the questions and can answer them. Create an authentication system for better user control.',
+  //   },
+  // },
   {
     slug: 'my-portfolio',
     title: 'My Portfolio',
