@@ -2,6 +2,7 @@ export type SEOConfig = {
   title: string;
   description: string;
   url: string;
+  metadataBase?: URL;
   siteName: string;
   author: string;
   keywords: string[];
@@ -27,6 +28,7 @@ export const defaultSEO: SEOConfig = {
   description:
     'Experienced Full Stack Developer specializing in React, TypeScript, and Next.js. Building scalable web applications and digital solutions for startups and B2B companies. Expert in modern JavaScript frameworks, API development, and responsive design.',
   url: 'https://alisonbessa.dev',
+  metadataBase: new URL('https://alisonbessa.dev'),
   siteName: 'Alison Bessa Portfolio',
   author: 'Alison Bessa',
   keywords: [

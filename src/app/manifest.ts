@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { defaultSEO } from '../../data/seo';
 
+export const dynamic = 'force-static';
+
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: defaultSEO.siteName,

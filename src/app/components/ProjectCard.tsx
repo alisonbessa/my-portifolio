@@ -1,3 +1,5 @@
+'use client';
+
 import type { Project } from '../../../data/projects';
 import { TagBadge } from './TagBadge';
 import Image from 'next/image';

@@ -3,6 +3,7 @@ import type { SEOConfig } from '../../data/seo';
 
 export function generateMetadata(seoConfig: SEOConfig): Metadata {
   return {
+    metadataBase: seoConfig.metadataBase,
     title: seoConfig.title,
     description: seoConfig.description,
     keywords: seoConfig.keywords.join(', '),
