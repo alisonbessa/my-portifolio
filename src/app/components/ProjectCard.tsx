@@ -3,10 +3,12 @@ import { TagBadge } from './TagBadge';
 import Image from 'next/image';
 import { T } from '../../../data/projects';
 import Link from 'next/link';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 export function ProjectCard({ project }: { project: Project }) {
   const techTags = (project.tags || []).filter((tag) => T[tag]?.type === 'tech');
   const softTags = (project.tags || []).filter((tag) => T[tag]?.type === 'soft');
+  const { trackExternalLink, trackProjectView } = useAnalytics();
   return (
     <div className="bg-card/80 dark:bg-white/10 rounded-2xl p-6 shadow-xl dark:shadow-[0_4px_32px_0_rgba(0,0,0,0.7)] border border-border/60 transition-colors max-w-md w-full mx-auto flex flex-col justify-between">
       <article className="flex flex-col h-full">
@@ -30,6 +32,7 @@ export function ProjectCard({ project }: { project: Project }) {
             <Link
               href={`/projects/${project.slug}`}
               className="hover:underline hover:text-primary transition-colors"
+              onClick={() => trackProjectView(project.slug, project.title)}
             >
               {project.title}
             </Link>
@@ -68,6 +71,7 @@ export function ProjectCard({ project }: { project: Project }) {
               target="_blank"
               rel="noopener noreferrer"
               className="underline text-primary hover:text-primary/80 text-sm"
+              onClick={() => trackExternalLink(project.demoUrl!, 'Demo')}
             >
               Demo
             </a>
@@ -78,6 +82,7 @@ export function ProjectCard({ project }: { project: Project }) {
               target="_blank"
               rel="noopener noreferrer"
               className="underline text-primary hover:text-primary/80 text-sm"
+              onClick={() => trackExternalLink(project.repoUrl!, 'Repository')}
             >
               Repository
             </a>
