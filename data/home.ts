@@ -11,4 +11,4 @@ export const homeKeywords = [
   'contact',
 ];
 export const resumeLink =
-  'https://drive.google.com/file/d/1D6g8AWcvvTbNXrU-ak3A6xmxzpacGyCG/view?usp=drive_link';
+  'https://drive.google.com/file/d/1HuOgHAjLkqBFsgtUwIBfbgoF70oxh7tN/view?usp=sharing';
