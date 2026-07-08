@@ -140,7 +140,7 @@ export const projects: Project[] = [
     slug: 'the-easy-list',
     title: 'The Easy List',
     description:
-      'A modern, real-time collaborative list application built with Next.js 15, Supabase, and Drizzle ORM.',
+      'A modern, real-time collaborative list application built with Next.js 15, Supabase, and Drizzle ORM, now serving over 3,000 users.',
     demoUrl: 'https://theeasylist.vercel.app',
     repoUrl: 'https://github.com/alisonbessa/easy-list',
     repoPrivate: true,
@@ -165,7 +165,7 @@ export const projects: Project[] = [
     ],
     details: {
       'Detailed Overview':
-        'The Easy List is a collaborative list application that enables multiple users to create, edit, and organize lists in real-time. It features AI-powered list generation, drag-and-drop categorization, template systems, and anonymous collaboration capabilities.',
+        'The Easy List is a collaborative list application that enables multiple users to create, edit, and organize lists in real-time. It features AI-powered list generation, drag-and-drop categorization, template systems, and anonymous collaboration capabilities. Since launch, it has grown to serve over 3,000 users.',
       'Key Features':
         'Real-time collaboration with live member presence, AI-powered list generation using Google Gemini, drag-and-drop organization between categories, template system for reusable lists, batch operations for multiple items, full internationalization (EN/PT-BR), accessibility-first design with keyboard navigation, and anonymous or authenticated usage.',
       'Technical Highlights':
@@ -173,35 +173,38 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: 'hivebudget',
-    title: 'HiveBudget',
-    demoUrl: 'https://hivebudget.com',
-    description: 'A collaborative budgeting platform for personal and group finance management.',
-    repoUrl: 'https://github.com/alisonbessa/hivebudget',
+    slug: 'walle',
+    title: 'Walle',
+    demoUrl: 'https://usewalle.com',
+    description:
+      'A collaborative financial planning platform that helps couples and families manage their budgets together, with an AI-powered WhatsApp assistant.',
+    repoUrl: 'https://github.com/alisonbessa/bluemoon',
     repoPrivate: true,
     featured: true,
-    workInProgress: true,
-    tags: ['dashboard', 'app', 'typescript', 'problem-solving', 'critical-thinking', 'nextjs'],
-    date: '2024-12-15',
-    thumbnail: '/images/projects/hivebudget-thumb.png',
-    motivation: 'To make personal and group financial planning more collaborative and effective.',
+    workInProgress: false,
+    tags: ['dashboard', 'app', 'typescript', 'ai', 'problem-solving', 'critical-thinking', 'nextjs'],
+    date: '2025-11-27',
+    thumbnail: '/images/projects/walle-thumb.png',
+    motivation:
+      'To make household and shared financial planning simple and collaborative for couples and families, meeting people where they already are, including on WhatsApp.',
     challenges: [
-      'Implementing a robust role-based access control system for multi-user collaboration',
-      'Integrating external services (Stripe for payments, Resend for emails, etc.) into the budgeting workflow',
-      'Integrating and making all the features communicate with each other was a challenging task',
+      'Designing a collaborative budgeting model where couples and families share categories, income, and expenses with proper roles and permissions',
+      'Building a WhatsApp and Telegram assistant with AI-powered intent recognition so users can log transactions in natural language',
+      'Handling subscriptions, trials, and billing securely with Stripe, including a card-less trial flow',
+      'Orchestrating scheduled background jobs (Inngest) for recurring transactions, reminders, and monthly rollovers',
     ],
     learnings: [
-      'Gained experience with advanced Next.js features (App Router, NextAuth) and type-safe ORM (Drizzle) in a full-stack application',
-      'Learned best practices for secure handling of financial data and third-party API integrations',
-      'Even though I had made a great plan before starting the project, I should have used smaller and more specific milestones',
+      'Deepened experience architecting a full-stack Next.js 16 / React 19 app with a type-safe Drizzle + PostgreSQL (Neon) data layer',
+      'Learned to design resilient messaging integrations, including a dual-number WhatsApp migration strategy with safe rollback',
+      'Gained practical experience with production concerns like Stripe billing, Sentry monitoring, and LGPD-aware analytics and consent',
     ],
     details: {
       'Detailed Overview':
-        'HiveBudget is a collaborative financial planning platform for managing personal or group finances through shared groups called "Hives". It allows users to organize income, expenses, and budgets collectively with features like role-based access control and interactive financial reports.',
-      'Work in progress':
-        'I am currently working on some details of the HiveBudget application to make it public and available for everyone to use. Meanwhile, I would be happy to show you a demo of the application.',
+        'Walle is a collaborative financial planning platform for couples and families. It lets people organize shared income, expenses, and budgets together, track goals, and get insights through reports, with an AI-powered WhatsApp assistant so logging a transaction is as easy as sending a message.',
       'Key Features':
-        'Key features include collaborative budgeting groups with role-based permissions (Owner, Admin, Editor, Viewer), intelligent transaction categorization, budgeting goals tracking, detailed charts for financial analysis, and secure authentication with multiple sign-in options.',
+        'Key features include shared budgeting groups with role-based permissions, category budgets and goal tracking, interactive financial reports and charts, subscription plans with a card-less trial (Stripe), scheduled background jobs for recurring items and reminders (Inngest), transactional emails (Resend), and a WhatsApp/Telegram assistant with natural-language intent recognition powered by Gemini.',
+      'Technical Highlights':
+        'Built with Next.js 16 App Router and React 19, Neon PostgreSQL with Drizzle ORM, NextAuth for authentication, Stripe for payments, Inngest for scheduled jobs, Resend for email, and Sentry for monitoring, using shadcn/ui components with Tailwind CSS.',
     },
   },
   {
