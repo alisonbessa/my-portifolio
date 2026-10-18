@@ -14,15 +14,29 @@ export type CareerEntry = {
 
 export const career: CareerEntry[] = [
   {
-    slug: 'radix-senior-frontend',
-    title: 'Senior Front-End Engineer',
+    slug: 'sigma-software-engineer',
+    title: 'Senior Software Engineer',
+    company: 'Sigma Software',
+    period: 'Dec 2025 - Present',
+    description:
+      "Modernizing a client's legacy PHP application into a React front end, including the backend changes needed now that PHP no longer renders the UI.",
+    highlights: [
+      'Migrating server-rendered PHP screens to React incrementally, keeping the product usable for customers throughout the migration.',
+      'Adapting backend endpoints to serve the new React front end, which previously received its HTML directly from PHP.',
+    ],
+    companyLinkedin: 'https://www.linkedin.com/company/sigma-software-group/',
+  },
+  {
+    slug: 'radix-senior-software-engineer',
+    title: 'Senior Software Engineer',
     company: 'Radix (Engineering & Software)',
     period: 'Mar 2025 - Present',
     description:
-      'Led development of a modern industrial web application using Next.js and Material UI, optimizing performance and scalability.',
+      'Led the front end of an industrial web platform with Next.js and Material UI, and took on backend features in Python, working across the stack.',
     highlights: [
       'Integrated Cognite SDK for real-time data visualization and advanced assets monitoring, and SSO authentication with MSAL and Azure AD, ensuring secure enterprise access.',
       'Maintained a robust test suite using Jest, React Testing Library, and Playwright, integrated with CI/CD pipelines.',
+      "Implemented backend features in Python for the platform's API and database layer, moving from front-end specialist to working across the stack.",
     ],
     companyLinkedin: 'https://www.linkedin.com/company/radixeng/',
   },

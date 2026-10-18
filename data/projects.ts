@@ -1,6 +1,6 @@
 export const projectsTitle = 'Projects';
 export const projectsSubtitle =
-  'A selection of public and private projects, built with different stacks and purposes.';
+  'Products I built and run end to end: talking to users, shipping, measuring, and iterating.';
 
 export const T = {
   javascript: {
@@ -113,6 +113,31 @@ export const T = {
     color: 'bg-blue-200 text-blue-900',
     type: 'tech',
   },
+  postgres: {
+    label: 'PostgreSQL',
+    color: 'bg-sky-200 text-sky-900',
+    type: 'tech',
+  },
+  analytics: {
+    label: 'Product Analytics',
+    color: 'bg-amber-200 text-amber-900',
+    type: 'tech',
+  },
+  automation: {
+    label: 'Automation',
+    color: 'bg-lime-200 text-lime-900',
+    type: 'tech',
+  },
+  mcp: {
+    label: 'MCP / Agents',
+    color: 'bg-fuchsia-200 text-fuchsia-900',
+    type: 'tech',
+  },
+  'product-thinking': {
+    label: 'Product Thinking',
+    color: 'bg-rose-200 text-rose-900',
+    type: 'soft',
+  },
 };
 
 export type Tag = keyof typeof T;
@@ -140,36 +165,92 @@ export const projects: Project[] = [
     slug: 'the-easy-list',
     title: 'The Easy List',
     description:
-      'A modern, real-time collaborative list application built with Next.js 15, Supabase, and Drizzle ORM, now serving over 3,000 users.',
-    demoUrl: 'https://theeasylist.vercel.app',
+      'A real-time collaborative list app (shopping, trips, parties) that anyone can edit from a shared link, with no sign-up. 2,500+ lists created in five months with zero marketing.',
+    demoUrl: 'https://theeasylist.com',
     repoUrl: 'https://github.com/alisonbessa/easy-list',
     repoPrivate: true,
     featured: true,
     workInProgress: false,
-    tags: ['app', 'typescript', 'ai', 'collaboration', 'productivity', 'problem-solving', 'nextjs'],
+    tags: [
+      'app',
+      'typescript',
+      'nextjs',
+      'postgres',
+      'analytics',
+      'ai',
+      'product-thinking',
+      'collaboration',
+      'problem-solving',
+    ],
     date: '2024-12-01',
     thumbnail: '/images/projects/the-easy-list-thumb.png',
     motivation:
-      'To create a seamless collaborative list-making experience with real-time features and AI assistance.',
+      'Shared lists should be as easy as sending a link. I wanted a list anyone in a group chat could open and edit together, instantly, without creating an account.',
     challenges: [
-      'Implementing real-time collaboration with multiple users editing simultaneously',
-      'Integrating AI-powered list generation with natural language processing',
-      'Building a robust drag-and-drop system for categories and items',
-      'Ensuring accessibility compliance (WCAG 2.1 AA) while maintaining modern UX',
+      'Rewriting the app as offline-first: IndexedDB (Dexie) as the single source of truth, a batched sync queue with exponential backoff, and temp-ID reconciliation, which removed duplicate items caused by realtime and optimistic updates racing each other',
+      'Designing a privacy-friendly, first-party analytics pipeline (no cookies, no third parties, honors Do Not Track) with a whitelisted event schema covering the core funnel: list created, item added, share clicked, identity selected',
+      'Fixing a confusing core interaction: users tapped items repeatedly without understanding them. I tried a checkbox variant, rejected it, and shipped tap to complete, hold to edit, plus a short tutorial and a contextual hint',
+      'Reading the funnel honestly: 38% of lists stayed empty and 87% were active for only one week, so retention, not acquisition, became the priority',
     ],
     learnings: [
-      'Mastered real-time database subscriptions with Supabase for live collaboration',
-      'Gained experience with Google Generative AI integration for smart content creation',
-      'Developed skills in building accessible, keyboard-navigable interfaces',
-      'Learned to implement comprehensive internationalization (i18n) systems',
+      'Measure the behaviour, not the feature: "confused" items (toggled 3 times in under 20 seconds) dropped from 7-8 to 3 per day after the interaction redesign, at similar volume',
+      'Virality can be designed: shared lists average 4.1 members and the viral coefficient reached 0.83 without any paid acquisition',
+      'Let data gate business decisions: I wrote a strategy memo that only allows a Pro plan once D30 retention passes 15%, and ranked monetization options by their impact on sharing',
+      'Real user feedback beats assumptions: an in-app feedback form led to an onboarding redesign with one prompt at a time and the feedback button moved out of the way of the list input',
     ],
     details: {
       'Detailed Overview':
-        'The Easy List is a collaborative list application that enables multiple users to create, edit, and organize lists in real-time. It features AI-powered list generation, drag-and-drop categorization, template systems, and anonymous collaboration capabilities. Since launch, it has grown to serve over 3,000 users.',
+        'The Easy List is a collaborative list app I build and run solo. You create a list, share the link, and everyone edits it together in real time, as a guest or with an account. It grew organically to 2,500+ lists in about five months, with 22% of lists shared and an average of 4.1 members per shared list.',
       'Key Features':
-        'Real-time collaboration with live member presence, AI-powered list generation using Google Gemini, drag-and-drop organization between categories, template system for reusable lists, batch operations for multiple items, full internationalization (EN/PT-BR), accessibility-first design with keyboard navigation, and anonymous or authenticated usage.',
+        'Link sharing with guest editing and an identity picker, real-time sync, categories with drag-and-drop, batch add ("milk, bread, eggs" becomes three items) with autocomplete, swipe to complete or delete with undo, templates, a poll mode (used by 93 lists in two months without promotion), Secret Santa with exclusions, web push, PWA install, AI list generation with Google Gemini, and EN/PT-BR in the app plus localized landing pages.',
+      'Product & Metrics':
+        'I instrument every change and decide from the numbers: 62% of lists receive an item, 35% reach 3+ items, 22% are shared, D7 list retention is 13.5% and D30 is 4.2% (12.6% for users with an account). Current work focuses on the empty-list leak and on shortening the tutorial, which most people close at step one.',
       'Technical Highlights':
-        'Built with Next.js 15 App Router, Supabase for real-time database and authentication, Drizzle ORM for type-safe queries, shadcn/ui components with Tailwind CSS, and comprehensive testing with CI/CD pipeline through GitHub Actions.',
+        'Next.js App Router and TypeScript, Supabase (Postgres, Realtime, Auth), Drizzle ORM with SQL migrations, offline-first sync with Dexie and a service worker, idempotency keys and rate limiting on server actions, shadcn/ui with Tailwind, GitHub Actions CI (lint, typecheck, build, security audit) and Playwright checks for mobile and desktop.',
+    },
+  },
+  {
+    slug: 'naguil',
+    title: 'Naguil Ops Platform',
+    description:
+      'The operations platform running a kitchen-equipment repair business every day: orders, stock, billing, and Playwright robots that operate customer procurement portals. Now adding an MCP server and evals so the team can query it through an LLM.',
+    repoPrivate: true,
+    featured: true,
+    workInProgress: true,
+    tags: [
+      'app',
+      'typescript',
+      'nextjs',
+      'postgres',
+      'automation',
+      'mcp',
+      'ai',
+      'product-thinking',
+      'problem-solving',
+    ],
+    date: '2026-06-01',
+    motivation:
+      'The back office was spending hours copying data by hand between spreadsheets and enterprise procurement portals. I mapped the real workflow with the team and built the system they now run the business on.',
+    challenges: [
+      'Automating fragile third-party portals (a Bubble app and SAP Ariba) with Playwright robots on a VPS, with safety locks: re-reading on-screen totals before saving, refusing tasks whose target changed, and verifying results after every write',
+      'Reconciling imperfect external data, such as a portal that silently truncates ticket numbers, with a guarded matcher (exact prefix, value, and time window, single candidate only) and a review queue for duplicates',
+      'Serializing concurrent robots against the same portal with file locks and a prioritized queue, so imports and writes never collide',
+      'Exposing business data to an LLM safely: an MCP server with read-only tools and an eval suite to check answers before the team relies on them (in progress)',
+    ],
+    learnings: [
+      'Product engineering for internal tools means shipping what removes the most manual work this week, then iterating from daily feedback',
+      'Automation you cannot trust is worse than none, so every robot action is verified and every failure is visible',
+      'Keeping business rules as pure, well-tested modules (1,388 tests) makes it safe to ship several PRs a week to a system people depend on',
+    ],
+    details: {
+      'Detailed Overview':
+        'A multi-tenant operations platform for a company that repairs and refurbishes commercial kitchen equipment for large restaurant chains. It is in daily production use and has gone through 440+ PRs since mid-2026, with a staging branch and owner sign-off before each release.',
+      'Key Features':
+        'Orders with duplicate detection and merge, procurement-portal integrations (CSV import every 15 minutes, a send queue for quotes, and approval tracking), stock with minimum levels and lead times, billing, margin and cost analysis, sales reports with Excel/CSV export, PDF purchase-order import, WhatsApp notifications, an audit trail, and delivery labels printed from a phone to a Bluetooth label printer with a QR code back to the order.',
+      'Agents & LLMs':
+        'Currently building an MCP server so the team can ask questions about orders, stock, and billing in natural language, backed by evals that check tool selection and answer accuracy against known cases.',
+      'Technical Highlights':
+        'Next.js 16 and React 19, Prisma on Neon serverless Postgres, Vitest (127 files, 1,388 tests), Playwright robots on a Linux VPS with scheduled modes and locks, pdf-lib and QR generation, Web Bluetooth printing, and a read-only database role for diagnostics. The code and customer data are private.',
     },
   },
   {
@@ -177,34 +258,47 @@ export const projects: Project[] = [
     title: 'Walle',
     demoUrl: 'https://usewalle.com',
     description:
-      'A collaborative financial planning platform that helps couples and families manage their budgets together, with an AI-powered WhatsApp assistant.',
+      'A shared budgeting SaaS for couples and families, with a WhatsApp assistant that logs expenses from plain messages. Instrumented end to end with PostHog.',
     repoUrl: 'https://github.com/alisonbessa/bluemoon',
     repoPrivate: true,
     featured: true,
     workInProgress: false,
-    tags: ['dashboard', 'app', 'typescript', 'ai', 'problem-solving', 'critical-thinking', 'nextjs'],
+    tags: [
+      'dashboard',
+      'app',
+      'typescript',
+      'nextjs',
+      'postgres',
+      'analytics',
+      'ai',
+      'product-thinking',
+      'critical-thinking',
+    ],
     date: '2025-11-27',
     thumbnail: '/images/projects/walle-thumb.png',
     motivation:
-      'To make household and shared financial planning simple and collaborative for couples and families, meeting people where they already are, including on WhatsApp.',
+      'Couples rarely manage money together because budgeting apps are built for one person. Walle makes it shared by default and meets people where they already are: on WhatsApp.',
     challenges: [
-      'Designing a collaborative budgeting model where couples and families share categories, income, and expenses with proper roles and permissions',
-      'Building a WhatsApp and Telegram assistant with AI-powered intent recognition so users can log transactions in natural language',
-      'Handling subscriptions, trials, and billing securely with Stripe, including a card-less trial flow',
-      'Orchestrating scheduled background jobs (Inngest) for recurring transactions, reminders, and monthly rollovers',
+      'Designing a shared budgeting model for couples and families with roles and permissions across income, categories, goals, and reports',
+      'Building a WhatsApp and Telegram assistant with Gemini intent recognition, plus deterministic fast paths that run before the AI so feedback and invites keep working even when a user hits the daily AI quota',
+      'Migrating the WhatsApp number with both numbers running in parallel and a safe rollback path',
+      'Running billing (Stripe subscriptions with a card-less trial), scheduled jobs (Inngest), retention emails (Resend), and monitoring (Sentry) as a one-person team',
     ],
     learnings: [
-      'Deepened experience architecting a full-stack Next.js 16 / React 19 app with a type-safe Drizzle + PostgreSQL (Neon) data layer',
-      'Learned to design resilient messaging integrations, including a dual-number WhatsApp migration strategy with safe rollback',
-      'Gained practical experience with production concerns like Stripe billing, Sentry monitoring, and LGPD-aware analytics and consent',
+      'Pick one north-star metric that reflects real value: for Walle it is both partners logging in during the same week, tracked with a couple-activation funnel in PostHog (sign-up, WhatsApp connected, first transaction, partner invited, invite accepted)',
+      'Model the unit you care about: since the value is per couple, I attach household properties to every event to analyse couples, not individuals',
+      'Clean data first: I found that sign-up events were inflated by bots and a double-firing bug, fixed both, and added an anti-bot trap before trusting the funnel',
+      'The data showed the bottleneck was acquisition, not conversion, which changed what I worked on next',
     ],
     details: {
       'Detailed Overview':
-        'Walle is a collaborative financial planning platform for couples and families. It lets people organize shared income, expenses, and budgets together, track goals, and get insights through reports, with an AI-powered WhatsApp assistant so logging a transaction is as easy as sending a message.',
+        'Walle (formerly HiveBudget) is a collaborative financial planning platform for couples and families in Brazil. People share income, expenses, and budgets, track goals, see reports, and log a transaction by simply texting the WhatsApp assistant something like "spent 49.30 at the market".',
       'Key Features':
-        'Key features include shared budgeting groups with role-based permissions, category budgets and goal tracking, interactive financial reports and charts, subscription plans with a card-less trial (Stripe), scheduled background jobs for recurring items and reminders (Inngest), transactional emails (Resend), and a WhatsApp/Telegram assistant with natural-language intent recognition powered by Gemini.',
+        'Shared budgets with role-based permissions, category budgets and goals, interactive reports, a WhatsApp/Telegram assistant with natural-language logging and in-chat partner invites, subscription plans with a card-less trial, recurring transactions and monthly rollovers, and automated retention emails (day 3, 5, 7 and win-back) with dry-run mode and per-run caps.',
+      'Product & Analytics':
+        'PostHog dashboards for the activation funnel and the couple north-star metric, LGPD-aware consent and analytics, an inverted onboarding that gets users to the WhatsApp assistant first, and feedback and bug reports collected straight from the chat.',
       'Technical Highlights':
-        'Built with Next.js 16 App Router and React 19, Neon PostgreSQL with Drizzle ORM, NextAuth for authentication, Stripe for payments, Inngest for scheduled jobs, Resend for email, and Sentry for monitoring, using shadcn/ui components with Tailwind CSS.',
+        'Next.js 16 App Router and React 19, Neon PostgreSQL with Drizzle ORM and hand-reviewed SQL migrations that are safe before or after deploy, NextAuth, Stripe, Inngest, Resend, Sentry, PostHog, and shadcn/ui with Tailwind. Every commit passes typecheck, lint, 1,000+ tests, and build.',
     },
   },
   {

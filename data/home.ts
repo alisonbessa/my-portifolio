@@ -1,7 +1,7 @@
 export const homeTitle = 'Alison Bessa';
-export const homeSubtitle = 'Crafting solutions, not just code';
+export const homeSubtitle = 'Product engineer. I build, ship, and measure.';
 export const homeDescription =
-  'From robotics and business ownership to engineering interfaces used at scale, I’ve always enjoyed solving real problems with practical tools and a human-first mindset.';
+  'I build products end to end and run them in production: a collaborative list app with 2,500+ lists created, a shared budgeting SaaS instrumented with PostHog, and an operations platform with browser robots and an MCP server. Before that, 5+ years as a senior front-end engineer and 4 years running my own business.';
 export const homeKeywords = [
   'portfolio',
   'projects',
