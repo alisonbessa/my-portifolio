@@ -14,6 +14,19 @@ export type CareerEntry = {
 
 export const career: CareerEntry[] = [
   {
+    slug: 'sigma-software-engineer',
+    title: 'Senior Software Engineer',
+    company: 'Sigma Software',
+    period: 'Dec 2025 - Present',
+    description:
+      "Modernizing a client's legacy PHP application into a React front end, including the backend changes needed now that PHP no longer renders the UI.",
+    highlights: [
+      'Migrating server-rendered PHP screens to React incrementally, keeping the product usable for customers throughout the migration.',
+      'Adapting backend endpoints to serve the new React front end, which previously received its HTML directly from PHP.',
+    ],
+    companyLinkedin: 'https://www.linkedin.com/company/sigma-software-group/',
+  },
+  {
     slug: 'radix-senior-frontend',
     title: 'Senior Front-End Engineer',
     company: 'Radix (Engineering & Software)',
@@ -23,6 +36,7 @@ export const career: CareerEntry[] = [
     highlights: [
       'Integrated Cognite SDK for real-time data visualization and advanced assets monitoring, and SSO authentication with MSAL and Azure AD, ensuring secure enterprise access.',
       'Maintained a robust test suite using Jest, React Testing Library, and Playwright, integrated with CI/CD pipelines.',
+      'Contributed backend features in Python for an industrial data platform, alongside the front-end work.',
     ],
     companyLinkedin: 'https://www.linkedin.com/company/radixeng/',
   },
