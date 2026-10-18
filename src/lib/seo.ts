@@ -68,7 +68,7 @@ export function generateStructuredData(seoConfig: SEOConfig) {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: seoConfig.author,
-    jobTitle: 'Full Stack Developer',
+    jobTitle: 'Product Engineer',
     description: seoConfig.description,
     url: baseUrl,
     image: `${baseUrl}${seoConfig.image.url}`,
@@ -120,7 +120,7 @@ export function generateStructuredData(seoConfig: SEOConfig) {
     },
     hasOccupation: {
       '@type': 'Occupation',
-      name: 'Full Stack Developer',
+      name: 'Product Engineer',
       occupationalCategory: 'Software Development',
       skills: 'React, TypeScript, Next.js, Node.js, JavaScript, Python, Web Development',
     },

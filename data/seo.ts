@@ -24,16 +24,21 @@ export type SEOConfig = {
 };
 
 export const defaultSEO: SEOConfig = {
-  title: 'Alison Bessa - Full Stack Developer',
+  title: 'Alison Bessa - Product Engineer',
   description:
-    'Experienced Full Stack Developer specializing in React, TypeScript, and Next.js. Building scalable web applications and digital solutions for startups and B2B companies. Expert in modern JavaScript frameworks, API development, and responsive design.',
+    'Product Engineer who builds and runs products end to end with TypeScript, React, Next.js and PostgreSQL. I talk to users, ship fast, instrument everything with product analytics, and build AI features with MCP and evals.',
   url: 'https://alisonbessa.dev',
   metadataBase: new URL('https://alisonbessa.dev'),
   siteName: 'Alison Bessa Portfolio',
   author: 'Alison Bessa',
   keywords: [
     'Alison Bessa',
+    'Product Engineer',
     'Full Stack Developer',
+    'Product Analytics',
+    'PostHog',
+    'MCP Server',
+    'AI Agents',
     'React Developer',
     'TypeScript Developer',
     'Next.js Developer',
@@ -67,7 +72,7 @@ export const defaultSEO: SEOConfig = {
     url: '/profile1x1.png',
     width: 400,
     height: 400,
-    alt: 'Alison Bessa - Full Stack Developer',
+    alt: 'Alison Bessa - Product Engineer',
   },
   twitter: {
     card: 'summary',
@@ -77,9 +82,9 @@ export const defaultSEO: SEOConfig = {
 
 export const pageSEO = {
   home: {
-    title: 'Alison Bessa - Full Stack Developer',
+    title: 'Alison Bessa - Product Engineer',
     description:
-      'Full Stack Developer specialized in React, TypeScript and Next.js. Experience with startups, B2B products and scalable solutions.',
+      'Product Engineer building and running products end to end: The Easy List, Walle and an operations platform with an MCP server. TypeScript, React, Next.js, PostgreSQL.',
     keywords: [...defaultSEO.keywords, 'portfolio', 'home', 'introduction'],
   },
   about: {
