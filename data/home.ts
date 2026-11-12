@@ -1,9 +1,11 @@
 export const homeTitle = 'Alison Bessa';
 export const homeSubtitle = 'Crafting solutions, not just code';
 export const homeDescription =
-  'From robotics and business ownership to engineering interfaces used at scale, I’ve always enjoyed solving real problems with practical tools and a human-first mindset.';
+  'Senior Frontend Engineer with 6+ years building data-intensive web apps with React, Next.js, and TypeScript, from geospatial platforms to enterprise modernization. From robotics and business ownership to interfaces used at scale, I enjoy solving real problems with practical tools, AI-augmented workflows, and a human-first mindset.';
 export const homeKeywords = [
   'portfolio',
+  'frontend engineering',
+  'geospatial',
   'projects',
   'career',
   'skills',
@@ -11,4 +13,4 @@ export const homeKeywords = [
   'contact',
 ];
 export const resumeLink =
-  'https://drive.google.com/file/d/1HuOgHAjLkqBFsgtUwIBfbgoF70oxh7tN/view?usp=sharing';
+  'https://drive.google.com/file/d/1fYJmX4DTzp6RUW_kTUVXcO6xdiKcbnNC/view?usp=drive_link';

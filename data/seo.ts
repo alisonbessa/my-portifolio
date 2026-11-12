@@ -24,15 +24,16 @@ export type SEOConfig = {
 };
 
 export const defaultSEO: SEOConfig = {
-  title: 'Alison Bessa - Full Stack Developer',
+  title: 'Alison Bessa - Senior Frontend Engineer',
   description:
-    'Experienced Full Stack Developer specializing in React, TypeScript, and Next.js. Building scalable web applications and digital solutions for startups and B2B companies. Expert in modern JavaScript frameworks, API development, and responsive design.',
+    'Senior Frontend Engineer with 6+ years of experience in React, Next.js, and TypeScript. Building data-intensive web apps, geospatial platforms, and enterprise modernizations for industrial, agtech, fintech, healthcare, and e-commerce clients.',
   url: 'https://alisonbessa.dev',
   metadataBase: new URL('https://alisonbessa.dev'),
   siteName: 'Alison Bessa Portfolio',
   author: 'Alison Bessa',
   keywords: [
     'Alison Bessa',
+    'Senior Frontend Engineer',
     'Full Stack Developer',
     'React Developer',
     'TypeScript Developer',
@@ -49,12 +50,12 @@ export const defaultSEO: SEOConfig = {
     'Desenvolvedor React',
     'Programador JavaScript',
     'Portfolio',
-    'São Paulo Developer',
+    'São José dos Campos Developer',
     'Brazil Developer',
-    'Freelancer Developer',
-    'Tech Consultant',
-    'Startup Developer',
-    'B2B Developer',
+    'Geospatial Developer',
+    'Mapbox GL',
+    'Remix Developer',
+    'AI-Assisted Engineering',
     'SaaS Developer',
     'API Development',
     'Database Design',
@@ -67,7 +68,7 @@ export const defaultSEO: SEOConfig = {
     url: '/profile1x1.png',
     width: 400,
     height: 400,
-    alt: 'Alison Bessa - Full Stack Developer',
+    alt: 'Alison Bessa - Senior Frontend Engineer',
   },
   twitter: {
     card: 'summary',
@@ -77,9 +78,9 @@ export const defaultSEO: SEOConfig = {
 
 export const pageSEO = {
   home: {
-    title: 'Alison Bessa - Full Stack Developer',
+    title: 'Alison Bessa - Senior Frontend Engineer',
     description:
-      'Full Stack Developer specialized in React, TypeScript and Next.js. Experience with startups, B2B products and scalable solutions.',
+      'Senior Frontend Engineer specialized in React, Next.js and TypeScript. Geospatial, data-heavy and enterprise web applications, with AI-augmented engineering workflows.',
     keywords: [...defaultSEO.keywords, 'portfolio', 'home', 'introduction'],
   },
   about: {
