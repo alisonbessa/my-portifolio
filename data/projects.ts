@@ -267,7 +267,7 @@ export const projects: Project[] = [
     slug: 'the-easy-list',
     title: 'The Easy List',
     description:
-      'A modern, real-time collaborative list application built with Next.js 15, Supabase, and Drizzle ORM.',
+      'A modern, real-time collaborative list application built with Next.js 15, Supabase, and Drizzle ORM, now serving over 3,000 users.',
     demoUrl: 'https://theeasylist.vercel.app',
     repoUrl: 'https://github.com/alisonbessa/easy-list',
     repoPrivate: true,
@@ -292,7 +292,7 @@ export const projects: Project[] = [
     ],
     details: {
       'Detailed Overview':
-        'The Easy List is a collaborative list application that enables multiple users to create, edit, and organize lists in real-time. It features AI-powered list generation, drag-and-drop categorization, template systems, and anonymous collaboration capabilities.',
+        'The Easy List is a collaborative list application that enables multiple users to create, edit, and organize lists in real-time. It features AI-powered list generation, drag-and-drop categorization, template systems, and anonymous collaboration capabilities. Since launch, it has grown to serve over 3,000 users.',
       'Key Features':
         'Real-time collaboration with live member presence, AI-powered list generation using Google Gemini, drag-and-drop organization between categories, template system for reusable lists, batch operations for multiple items, full internationalization (EN/PT-BR), accessibility-first design with keyboard navigation, and anonymous or authenticated usage.',
       'Technical Highlights':
@@ -303,36 +303,35 @@ export const projects: Project[] = [
     slug: 'walle',
     title: 'Walle',
     demoUrl: 'https://usewalle.com',
-    description: 'A budgeting platform designed specifically for couples to plan, track, and balance shared finances together.',
-    repoUrl: 'https://github.com/alisonbessa/hivebudget',
+    description:
+      'A collaborative financial planning platform that helps couples and families manage their budgets together, with an AI-powered WhatsApp assistant.',
+    repoUrl: 'https://github.com/alisonbessa/bluemoon',
     repoPrivate: true,
     featured: true,
-    workInProgress: true,
+    workInProgress: false,
     tags: ['dashboard', 'app', 'typescript', 'ai', 'problem-solving', 'critical-thinking', 'nextjs'],
-    date: '2024-12-15',
+    date: '2025-11-27',
     thumbnail: '/images/projects/walle-thumb.png',
-    motivation: 'Money is one of the biggest sources of stress in relationships. I wanted to build a tool that makes it easy for couples to organize finances together — without spreadsheets, without fights, and without losing individual privacy.',
+    motivation:
+      'To make household and shared financial planning simple and collaborative for couples and families, meeting people where they already are, including on WhatsApp.',
     challenges: [
-      'Designing a system that distinguishes personal vs. shared expenses automatically based on category and account ownership, without requiring manual classification from the user',
-      'Building an AI-powered WhatsApp bot (using Gemini) that understands natural language in Portuguese to register expenses, query balances, and suggest categories with confidence scoring',
-      'Implementing atomic financial operations (transfers, installments, settlements) with Drizzle ORM transactions to prevent race conditions and ensure data integrity',
-      'Creating a flexible privacy system with three modes (Visible, Unified, Private) that requires partner confirmation to change, balancing transparency with individual autonomy',
+      'Designing a collaborative budgeting model where couples and families share categories, income, and expenses with proper roles and permissions',
+      'Building a WhatsApp and Telegram assistant with AI-powered intent recognition so users can log transactions in natural language',
+      'Handling subscriptions, trials, and billing securely with Stripe, including a card-less trial flow',
+      'Orchestrating scheduled background jobs (Inngest) for recurring transactions, reminders, and monthly rollovers',
     ],
     learnings: [
-      'Deeply learned how to architect a full-stack financial SaaS with Next.js App Router, Drizzle ORM, and PostgreSQL — handling complex domain logic like billing cycles, carry-over budgets, and installment tracking',
-      'Gained hands-on experience integrating multiple external services (Stripe payments, WhatsApp API, Google Gemini AI, Resend emails, Inngest background jobs) into a cohesive product',
-      'Learned that building for a very specific audience (couples) leads to much stronger product-market fit than trying to serve everyone — the constraint forced better design decisions',
-      'Improved my approach to iterative development: shipping smaller features frequently and gathering real user feedback, rather than planning everything upfront',
+      'Deepened experience architecting a full-stack Next.js 16 / React 19 app with a type-safe Drizzle + PostgreSQL (Neon) data layer',
+      'Learned to design resilient messaging integrations, including a dual-number WhatsApp migration strategy with safe rollback',
+      'Gained practical experience with production concerns like Stripe billing, Sentry monitoring, and LGPD-aware analytics and consent',
     ],
     details: {
       'Detailed Overview':
-        'Walle is a financial planning platform built specifically for couples. It allows two partners to share a budget, track expenses from personal and joint accounts, set savings goals, and automatically calculate monthly settlements (who owes whom). The core philosophy is "budget-first": couples plan where every penny goes before spending, rather than just tracking expenses after the fact.',
-      'How It Works':
-        'Each couple creates a shared budget with personal and joint accounts. Expenses are classified as personal or shared based on the category chosen — no manual tagging needed. When one partner pays a shared expense from their personal account, the system tracks it and calculates a fair 50/50 settlement at the end of the month. Partners can register expenses instantly via WhatsApp using natural language, voice messages, or receipt photos.',
+        'Walle is a collaborative financial planning platform for couples and families. It lets people organize shared income, expenses, and budgets together, track goals, and get insights through reports, with an AI-powered WhatsApp assistant so logging a transaction is as easy as sending a message.',
       'Key Features':
-        'Shared budget with personal and joint accounts; automatic classification of personal vs. shared expenses; monthly settlement calculation (who owes whom); AI-powered expense registration via WhatsApp (text, voice, and photo); installment tracking for credit card purchases (2-24 months); recurring bills with automatic pending transaction generation; savings goals with progress tracking; three privacy modes (Visible, Unified, Private) with partner confirmation; contribution model (each partner decides how much income goes to the shared budget); interactive dashboards with daily/monthly spending charts.',
-      'Tech Stack':
-        'Next.js 15 (App Router), TypeScript, PostgreSQL, Drizzle ORM, NextAuth.js, Stripe (payments), WhatsApp Business API, Google Gemini AI (intent recognition and NLP), Inngest (background jobs and cron), Resend (transactional emails), Tailwind CSS, shadcn/ui, Framer Motion, SWR, Vercel.',
+        'Key features include shared budgeting groups with role-based permissions, category budgets and goal tracking, interactive financial reports and charts, subscription plans with a card-less trial (Stripe), scheduled background jobs for recurring items and reminders (Inngest), transactional emails (Resend), and a WhatsApp/Telegram assistant with natural-language intent recognition powered by Gemini.',
+      'Technical Highlights':
+        'Built with Next.js 16 App Router and React 19, Neon PostgreSQL with Drizzle ORM, NextAuth for authentication, Stripe for payments, Inngest for scheduled jobs, Resend for email, and Sentry for monitoring, using shadcn/ui components with Tailwind CSS.',
     },
   },
   {
