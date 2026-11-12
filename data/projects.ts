@@ -113,6 +113,16 @@ export const T = {
     color: 'bg-blue-200 text-blue-900',
     type: 'tech',
   },
+  geospatial: {
+    label: 'Geospatial',
+    color: 'bg-emerald-200 text-emerald-900',
+    type: 'tech',
+  },
+  react: {
+    label: 'React',
+    color: 'bg-sky-200 text-sky-900',
+    type: 'tech',
+  },
 };
 
 export type Tag = keyof typeof T;
@@ -136,6 +146,123 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: 'geospatial-digital-twin-platform',
+    title: 'Geospatial Digital-Twin Platform',
+    description:
+      'Frontend of a new geospatial digital-twin data platform for a major energy company, built from scratch as the sole frontend engineer at Radix.',
+    featured: true,
+    workInProgress: false,
+    tags: ['geospatial', 'react', 'nextjs', 'typescript', 'dashboard', 'ai', 'problem-solving'],
+    date: '2025-03-01',
+    motivation:
+      'A major energy company needed a single platform to centralize, visualize and govern geospatial source data about its physical assets, replacing fragmented vendor datasets and manual workflows.',
+    challenges: [
+      'Choosing and owning the frontend architecture as the only frontend engineer, from an empty repository to gradual internal adoption',
+      'Combining interactive maps and 3D asset visualization in a performant way with large spatial datasets',
+      'Handling coordinate-reference-system transformations and unit normalization across data coming from different vendors',
+      'Defining API contracts and complex spatial workflows together with backend and geospatial engineers',
+    ],
+    learnings: [
+      'Designing a frontend for geospatial correctness, where a wrong projection or unit is a real bug, not a visual glitch',
+      'Making architectural decisions alone and documenting them so other teams could adopt the platform',
+      'Using AI-assisted and agentic coding (Claude Code) for code exploration, feature development, debugging and refactoring without losing control of quality',
+    ],
+    details: {
+      'Detailed Overview':
+        'A digital-twin data platform for a major energy company that organizes geospatial source data of physical assets and exposes it through interactive maps, 3D views and role-based interfaces. Delivered at Radix, where I was the sole frontend engineer.',
+      'My Role':
+        'Sole frontend engineer: chose the architecture, built the application from scratch, and worked with backend and geospatial engineers on API contracts and spatial workflows. Supported the gradual internal adoption of the platform.',
+      'Key Features':
+        'Interactive maps, 3D asset visualization, coordinate-reference transformations, unit normalization, vendor data integration and role-based interfaces.',
+      'Tech Stack':
+        'React, Next.js, TypeScript, TanStack Query, Mapbox GL, Material UI, REST APIs, Claude Code.',
+    },
+  },
+  {
+    slug: 'industrial-asset-monitoring',
+    title: 'Industrial Asset Monitoring (Cognite)',
+    description:
+      'Frontend for monitoring equipment health from industrial sensor data, integrated with Cognite and secured with Azure AD.',
+    featured: false,
+    workInProgress: false,
+    tags: ['dashboard', 'react', 'nextjs', 'typescript', 'problem-solving'],
+    date: '2025-06-01',
+    motivation:
+      'Give operations teams a clear, reliable view of equipment health based on real-time industrial sensor data.',
+    challenges: [
+      'Building the frontend from inception and owning the architectural decisions',
+      'Acquiring and visualizing time-series sensor data through the Cognite SDK in a responsive dashboard',
+      'Implementing enterprise single sign-on with MSAL and Azure AD',
+    ],
+    learnings: [
+      'Working with industrial data platforms and their SDKs inside a Next.js application',
+      'Designing secure enterprise authentication flows end to end',
+    ],
+    details: {
+      Overview:
+        'A web application to monitor the health of industrial equipment using sensor data stored in Cognite, delivered at Radix.',
+      'Tech Stack': 'React, Next.js, TypeScript, Cognite SDK, Material UI, MSAL, Azure AD.',
+    },
+  },
+  {
+    slug: 'seedz-satellite-ndvi',
+    title: 'Satellite Imagery & NDVI Dashboard (Seedz)',
+    description:
+      'AI-powered geospatial dashboard that visualizes satellite imagery and NDVI to support agricultural decisions, with map calculations cut from minutes to under five seconds.',
+    featured: true,
+    workInProgress: false,
+    tags: ['geospatial', 'react', 'dashboard', 'javascript', 'problem-solving', 'critical-thinking'],
+    date: '2023-05-01',
+    motivation:
+      'Farmers and agronomists needed to understand crop health from satellite data and make high-stakes decisions without waiting on slow calculations.',
+    challenges: [
+      'Map calculations over property geometries took minutes, which made the experience unusable',
+      'Redesigning the frontend architecture and property-selection UX around preprocessed GeoJSON',
+      'Keeping SSR pages fast while rendering data-intensive interfaces',
+      'Translating complex agronomic calculations and business rules into reliable frontend logic',
+    ],
+    learnings: [
+      'Moving heavy work out of the browser and into preprocessed data can change the entire UX, with calculations dropping from minutes to under five seconds',
+      'Remix SSR tuning improved page loading by about 35%',
+      'A mechanical engineering background helped me become the technical reference for calculations and business logic',
+    ],
+    details: {
+      Overview:
+        'A geospatial dashboard for the agtech company Seedz, showing satellite imagery and NDVI vegetation indexes over rural properties.',
+      'My Role':
+        'Senior frontend engineer from May 2023 to Dec 2024: built the geospatial interfaces, redesigned the architecture around preprocessed GeoJSON, and developed reusable components and data-intensive interfaces.',
+      'Tech Stack': 'Remix, React, JavaScript, Mapbox GL, Turf.js, GeoJSON, SSR.',
+    },
+  },
+  {
+    slug: 'enterprise-php-to-react-migration',
+    title: 'Backup & Recovery Modernization',
+    description:
+      'Migration of an enterprise backup and recovery application from legacy PHP interfaces to React, delivered through Sigma Software Group.',
+    featured: false,
+    workInProgress: true,
+    tags: ['react', 'javascript', 'ai', 'problem-solving', 'adaptability'],
+    date: '2025-12-01',
+    motivation:
+      'Part of a platform migration: modernizing a mature product without breaking the workflows its customers rely on.',
+    challenges: [
+      'Moving roughly 20-30 screens and 15-20 workflows from legacy PHP to React',
+      'Converting legacy PHP business rules into the new frontend architecture',
+      'Writing the technical design of an FTPS-based recovery feature and breaking it into engineering tasks',
+    ],
+    learnings: [
+      'Legacy modernization is mostly about recovering undocumented business rules',
+      'Agentic development, context engineering and MCP-assisted UI validation speed up exploration, implementation and reviews when used with clear guardrails',
+      'Built an AI-assisted localization workflow connected to an external translations repository, with documentation for the team',
+    ],
+    details: {
+      Overview:
+        'A client project (via Sigma Software Group): migrating the legacy PHP interface of a backup and recovery application to React, including support for the beta release for existing users.',
+      'Tech Stack':
+        'React, JavaScript, Redux Toolkit, Material UI, REST APIs, Jest, React Testing Library, Cursor, MCP.',
+    },
+  },
   {
     slug: 'the-easy-list',
     title: 'The Easy List',
@@ -173,9 +300,9 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: 'hivebudget',
-    title: 'HiveBudget',
-    demoUrl: 'https://hivebudget.com',
+    slug: 'walle',
+    title: 'Walle',
+    demoUrl: 'https://usewalle.com',
     description: 'A budgeting platform designed specifically for couples to plan, track, and balance shared finances together.',
     repoUrl: 'https://github.com/alisonbessa/hivebudget',
     repoPrivate: true,
@@ -183,7 +310,7 @@ export const projects: Project[] = [
     workInProgress: true,
     tags: ['dashboard', 'app', 'typescript', 'ai', 'problem-solving', 'critical-thinking', 'nextjs'],
     date: '2024-12-15',
-    thumbnail: '/images/projects/hivebudget-thumb.png',
+    thumbnail: '/images/projects/walle-thumb.png',
     motivation: 'Money is one of the biggest sources of stress in relationships. I wanted to build a tool that makes it easy for couples to organize finances together — without spreadsheets, without fights, and without losing individual privacy.',
     challenges: [
       'Designing a system that distinguishes personal vs. shared expenses automatically based on category and account ownership, without requiring manual classification from the user',
@@ -199,44 +326,13 @@ export const projects: Project[] = [
     ],
     details: {
       'Detailed Overview':
-        'HiveBudget is a financial planning platform built specifically for couples. It allows two partners to share a budget, track expenses from personal and joint accounts, set savings goals, and automatically calculate monthly settlements (who owes whom). The core philosophy is "budget-first": couples plan where every real goes before spending, rather than just tracking expenses after the fact.',
+        'Walle is a financial planning platform built specifically for couples. It allows two partners to share a budget, track expenses from personal and joint accounts, set savings goals, and automatically calculate monthly settlements (who owes whom). The core philosophy is "budget-first": couples plan where every penny goes before spending, rather than just tracking expenses after the fact.',
       'How It Works':
         'Each couple creates a shared budget with personal and joint accounts. Expenses are classified as personal or shared based on the category chosen — no manual tagging needed. When one partner pays a shared expense from their personal account, the system tracks it and calculates a fair 50/50 settlement at the end of the month. Partners can register expenses instantly via WhatsApp using natural language, voice messages, or receipt photos.',
       'Key Features':
         'Shared budget with personal and joint accounts; automatic classification of personal vs. shared expenses; monthly settlement calculation (who owes whom); AI-powered expense registration via WhatsApp (text, voice, and photo); installment tracking for credit card purchases (2-24 months); recurring bills with automatic pending transaction generation; savings goals with progress tracking; three privacy modes (Visible, Unified, Private) with partner confirmation; contribution model (each partner decides how much income goes to the shared budget); interactive dashboards with daily/monthly spending charts.',
       'Tech Stack':
         'Next.js 15 (App Router), TypeScript, PostgreSQL, Drizzle ORM, NextAuth.js, Stripe (payments), WhatsApp Business API, Google Gemini AI (intent recognition and NLP), Inngest (background jobs and cron), Resend (transactional emails), Tailwind CSS, shadcn/ui, Framer Motion, SWR, Vercel.',
-    },
-  },
-  {
-    slug: 'intelimeet',
-    title: 'InteliMeet',
-    description:
-      'An intelligent meeting room app with AI-driven Q&A assistance and audio recording features.',
-    repoUrl: 'https://github.com/alisonbessa/intelimeet-web',
-    repoPrivate: false,
-    featured: false,
-    workInProgress: true,
-    tags: ['ai', 'typescript', 'problem-solving', 'creativity', 'critical-thinking', 'nextjs'],
-    date: '2024-08-01',
-    thumbnail: '/images/projects/intelimeet-thumb.png',
-    motivation:
-      'To enhance virtual meetings by providing an AI assistant that can answer questions in real time and record meeting discussions.',
-    challenges: [
-      'Integrating an AI Q&A system that provides accurate real-time answers during meetings',
-      'Managing real-time audio recording and playback in the browser without disrupting the user experience',
-    ],
-    learnings: [
-      'Deepened knowledge of integrating AI services (NLP models) into web applications for domain-specific Q&A',
-      'Learned how to build interactive, real-time features (like live Q&A and audio capture) with responsive UI/UX considerations',
-    ],
-    details: {
-      Overview:
-        'InteliMeet is a web application for intelligent virtual meetings. Each meeting room provides a Q&A interface where participants can ask questions and receive answers from an AI assistant in real time. The platform also allows recording the meeting audio for future reference.',
-      'Key Features':
-        "Key features include the ability to create dedicated meeting rooms, an AI-driven Q&A system that generates answers to participants' questions on the fly, and an option to record and replay meeting audio for archiving discussions.",
-      'Next features':
-        'The next tasks are to improve the audio chunk creation parameters and the parameters used by the AI. Create a speaker area where they have a better view of the questions and can answer them. Create an authentication system for better user control.',
     },
   },
   {
